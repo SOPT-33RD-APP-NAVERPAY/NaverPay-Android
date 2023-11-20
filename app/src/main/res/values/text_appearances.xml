@@ -30,7 +30,7 @@
     </style>
 
     <style name="TextAppearance.NaverPay.subtitle_smbold_17">
-        <item name="fontFamily">@font/font_roboto_bold</item>
+        <item name="fontFamily">@font/font_roboto_medium</item>
         <item name="android:textSize">17sp</item>
         <item name="lineHeight">24dp</item>
         <item name="fontWeight">600</item>
@@ -44,7 +44,7 @@
     </style>
 
     <style name="TextAppearance.NaverPay.subtitle_smbold_16">
-        <item name="fontFamily">@font/font_roboto_bold</item>
+        <item name="fontFamily">@font/font_roboto_medium</item>
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">24dp</item>
         <item name="fontWeight">600</item>
@@ -65,7 +65,7 @@
     </style>
 
     <style name="TextAppearance.NaverPay.body_smbold_15">
-        <item name="fontFamily">@font/font_roboto_bold</item>
+        <item name="fontFamily">@font/font_roboto_medium</item>
         <item name="android:textSize">15sp</item>
         <item name="lineHeight">17.58dp</item>
         <item name="fontWeight">600</item>
@@ -100,7 +100,7 @@
     </style>
 
     <style name="TextAppearance.NaverPay.detail_smbold_12">
-        <item name="fontFamily">@font/font_roboto_bold</item>
+        <item name="fontFamily">@font/font_roboto_medium</item>
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">14.06dp</item>
         <item name="fontWeight">600</item>
@@ -114,7 +114,7 @@
     </style>
 
     <style name="TextAppearance.NaverPay.detail_smbold_11">
-        <item name="fontFamily">@font/font_roboto_bold</item>
+        <item name="fontFamily">@font/font_roboto_medium</item>
         <item name="android:textSize">11sp</item>
         <item name="lineHeight">12.89dp</item>
         <item name="fontWeight">600</item>
