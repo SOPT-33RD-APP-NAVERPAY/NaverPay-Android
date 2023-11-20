@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#05AA5B" android:state_checked="true" /> <!-- 선택되었을 때의 색상 -->
+    <item android:color="#E9E9E9" /> <!-- 선택되지 않았을 때의 색상 -->
+</selector>
