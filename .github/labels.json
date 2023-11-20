@@ -1,0 +1,42 @@
+[
+  {
+    "name": "⭐ [FEAT]",
+    "color": "8a1334",
+    "description": "새로운 기능 구현"
+  },
+  {
+    "name": "➕ [ADD]",
+    "color": "623e11",
+    "description": "부수적인 코드 추가 및 라이브러리 추가, 새로운 파일 생성"
+  },
+  {
+    "name":"🛠️ [CHORE]",
+    "color": "4a4811",
+    "description": "버전 코드 수정, 패키지 구조 변경, 타입 및 변수명 변경 등의 작은 작업"
+  },
+  {
+    "name": "🔨 [FIX]",
+    "color": "FF968A",
+    "description": "버그 및 오류 발생 및 해결"
+  },
+  {
+    "name": " ♻️ [REFACTOR]",
+    "color": "D4F0F0",
+    "description": "코드 리팩토링"
+  },
+  {
+    "name": "\uD83D\uDC2F 재원",
+    "color": "FFFFB5",
+    "description": "서재원이 했다"
+  },
+  {
+    "name": "\uD83D\uDC38 준서",
+    "color": "FFFFB5",
+    "description": "최준서가 했다"
+  },
+  {
+    "name": "\uD83D\uDC39 민회",
+    "color": "FFFFB5",
+    "description": "허민회 했다"
+  }
+]
