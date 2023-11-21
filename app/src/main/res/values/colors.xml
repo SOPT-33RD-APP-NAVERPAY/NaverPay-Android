@@ -18,6 +18,7 @@
 
     <!--  sub  -->
     <color name="sub_palegreen">#EEF9F3</color>
+    <color name="sub_palegreen2">#E2F6EC</color>
     <color name="sub_darkgreen">#098866</color>
     <color name="sub_darkgreen2">#004131</color>
     <color name="sub_black">#000000</color>
