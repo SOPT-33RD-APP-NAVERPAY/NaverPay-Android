@@ -5,17 +5,17 @@
     <tr>
       <td align="center" width="33%">
         <a href="https://github.com/librarywon">
-          <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/ac402b07-e44e-4eae-865f-30d5c53927e4" width="200px;" alt=""/>
-        </a>
-      </td>
-      <td align="center" width="33%">
-        <a href="https://github.com/minemi00">
-          <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/ae75b2a5-f560-4dbd-82db-8fe531330c7b" width="200px;" alt=""/>
+          <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/a669ab33-6e72-49b3-a40c-2ac53a1321de" width="200px;" alt=""/>
         </a>
       </td>
       <td align="center" width="33%">
         <a href="https://github.com/Junseo511">
-          <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/691c5c7b-6a6d-4bf5-b953-336ac7d6e548" width="200px;" alt=""/>
+          <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/90f04347-14b0-4b51-bfbd-9078f7104a85" width="200px;" alt=""/>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/minemi00">
+          <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/69e51c38-58aa-4770-bed4-1d4457d10279" width="200px;" alt=""/>
         </a>
       </td>
     </tr>
@@ -98,5 +98,6 @@ feature 단위로 브랜치를 구성합니다.
 
 ## Code Convention
 
-<img width="781" alt="view_convention" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/d954ab15-3062-4601-979e-746279e54132">
-<img width="755" alt="xml_drawable_convention" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/1fc2df63-8a3a-4f9c-ab2e-0d1c3fdcc8fb">
+<img width="781" alt="view_convention" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/ffad81fa-cf38-4ddc-b436-9eb52d195a28">
+<img width="755" alt="xml_drawable_convention" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/78cf47e2-1158-47ab-921e-9bc485d19525">
+
