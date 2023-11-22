@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_black">
+
+    <!-- Header Background -->
+
+    <!-- Header Background -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_header"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="137dp">
+
+
+    </ScrollView>
+
+
+    <!-- Header Background -->
+    <View
+        android:id="@+id/v_header"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logo Icon -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/img_logo"
+        app:layout_constraintStart_toStartOf="@id/v_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Notice Icon -->
+    <ImageView
+        android:id="@+id/iv_header_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="21dp"
+        android:src="@drawable/ic_notice"
+        app:layout_constraintEnd_toStartOf="@id/iv_header_menu"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Menu Icon -->
+    <ImageView
+        android:id="@+id/iv_header_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
