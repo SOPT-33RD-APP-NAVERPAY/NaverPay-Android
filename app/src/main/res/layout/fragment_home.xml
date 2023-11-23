@@ -143,8 +143,8 @@
 
                 <TextView
                     android:id="@+id/tv_card_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="24dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="132dp"
                     android:text="하나 3597"
@@ -179,6 +179,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:maxLines="1"
                     android:text="11,500"
                     android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
                     android:textColor="@color/bg_white"
@@ -230,6 +231,109 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tv_recent_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="56dp"
+                android:text="최근 현장결제"
+                android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
+                android:textColor="@color/bg_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_card_background" />
+
+            <TextView
+                android:id="@+id/tv_recent_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:text="11.16"
+                android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
+                android:textColor="@color/main_lightgreen"
+                app:layout_constraintBottom_toBottomOf="@id/tv_recent_payment"
+                app:layout_constraintStart_toEndOf="@id/tv_recent_payment" />
+
+            <RelativeLayout
+                android:id="@+id/rl_allview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="7dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_recent_payment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_recent_payment">
+
+                <TextView
+                    android:id="@+id/tv_allview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="3dp"
+                    android:text="전체보기"
+                    android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
+                    android:textColor="@color/grayscale_gray6" />
+
+                <ImageView
+                    android:id="@+id/iv_allview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tv_allview"
+                    android:src="@drawable/ic_home_arrow_gray" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_recent_payment"
+                android:layout_width="320dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/rectangle_sub_white_radius_6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_recent_payment" />
+
+            <ImageView
+                android:id="@+id/iv_recent_place"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="14dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_recent_blank"
+                app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
+                app:layout_constraintStart_toStartOf="@id/iv_recent_payment"
+                app:layout_constraintTop_toTopOf="@id/iv_recent_payment" />
+
+            <TextView
+                android:id="@+id/tv_recent_place"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:maxLines="1"
+                android:text="GS25 건대점"
+                android:textAppearance="@style/TextAppearance.NaverPay.body_medium_15"
+                android:textColor="@color/bg_black"
+                app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
+                app:layout_constraintStart_toEndOf="@id/iv_recent_place"
+                app:layout_constraintTop_toTopOf="@id/iv_recent_payment" />
+
+            <TextView
+                android:id="@+id/tv_recent_price"
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:maxLines="1"
+                android:text="-25,000 원"
+                android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
+                android:textColor="@color/bg_black"
+                app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
+                app:layout_constraintEnd_toEndOf="@id/iv_recent_payment"
+                app:layout_constraintTop_toTopOf="@id/iv_recent_payment" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
