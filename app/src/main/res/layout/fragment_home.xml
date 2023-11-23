@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="21dp"
-        android:src="@drawable/ic_notice"
+        android:src="@drawable/ic_home_notice"
         app:layout_constraintEnd_toStartOf="@id/iv_header_menu"
         app:layout_constraintTop_toTopOf="@id/v_header" />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_menu"
+        android:src="@drawable/ic_home_menu"
         app:layout_constraintEnd_toEndOf="@id/v_header"
         app:layout_constraintTop_toTopOf="@id/v_header" />
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_tab_pay"
+                android:id="@+id/tv_tab_payment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -72,9 +72,9 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="4dp"
                 android:background="@color/main_lightgreen"
-                app:layout_constraintEnd_toEndOf="@id/tv_tab_pay"
-                app:layout_constraintStart_toStartOf="@id/tv_tab_pay"
-                app:layout_constraintTop_toBottomOf="@id/tv_tab_pay" />
+                app:layout_constraintEnd_toEndOf="@id/tv_tab_payment"
+                app:layout_constraintStart_toStartOf="@id/tv_tab_payment"
+                app:layout_constraintTop_toBottomOf="@id/tv_tab_payment" />
 
             <TextView
                 android:id="@+id/tv_tab_membership"
@@ -84,8 +84,8 @@
                 android:text="멤버십"
                 android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
                 android:textColor="@color/grayscale_gray7"
-                app:layout_constraintStart_toEndOf="@id/tv_tab_pay"
-                app:layout_constraintTop_toTopOf="@id/tv_tab_pay" />
+                app:layout_constraintStart_toEndOf="@id/tv_tab_payment"
+                app:layout_constraintTop_toTopOf="@id/tv_tab_payment" />
 
             <View
                 android:id="@+id/v_tab_membership_bottom"
@@ -96,6 +96,140 @@
                 app:layout_constraintEnd_toEndOf="@id/tv_tab_membership"
                 app:layout_constraintStart_toStartOf="@id/tv_tab_membership"
                 app:layout_constraintTop_toBottomOf="@id/tv_tab_membership" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_card_background"
+                android:layout_width="320dp"
+                android:layout_height="316dp"
+                android:layout_marginTop="68dp"
+                android:background="@drawable/rectangle_sub_gd_radius_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="29dp"
+                    android:text="네이버 포인트"
+                    android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
+                    android:textColor="@color/bg_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_card_uv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="25dp"
+                    android:src="@drawable/ic_home_uv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_card_account_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="111dp"
+                    android:text="출금계좌"
+                    android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
+                    android:textColor="#99FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_card_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="132dp"
+                    android:text="하나 3597"
+                    android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_16"
+                    android:textColor="@color/bg_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_account_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home_arrow_white"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_card_account"
+                    app:layout_constraintStart_toEndOf="@id/tv_card_account"
+                    app:layout_constraintTop_toTopOf="@id/tv_card_account" />
+
+                <TextView
+                    android:id="@+id/tv_card_balacne_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:text="보유금액"
+                    android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
+                    android:textColor="#99FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_card_account"
+                    app:layout_constraintStart_toEndOf="@id/tv_card_account"
+                    app:layout_constraintTop_toTopOf="@id/tv_card_account" />
+
+                <TextView
+                    android:id="@+id/tv_card_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="11,500"
+                    android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
+                    android:textColor="@color/bg_white"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_card_balacne_title"
+                    app:layout_constraintStart_toEndOf="@id/tv_card_balacne_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_card_balacne_title" />
+
+                <TextView
+                    android:id="@+id/tv_card_balance_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="p"
+                    android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
+                    android:textColor="@color/bg_white"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_card_balance"
+                    app:layout_constraintStart_toEndOf="@id/tv_card_balance"
+                    app:layout_constraintTop_toTopOf="@id/tv_card_balance" />
+
+                <ImageView
+                    android:id="@+id/iv_balance_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_home_arrow_white"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_card_balance_unit"
+                    app:layout_constraintStart_toEndOf="@id/tv_card_balance_unit"
+                    app:layout_constraintTop_toTopOf="@id/tv_card_balance_unit" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_card_list"
+                    android:layout_width="360dp"
+                    android:layout_height="81dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="183dp"
+                    android:background="@drawable/gradient_linear_gd"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_payment"
+                    android:layout_width="320dp"
+                    android:layout_height="52dp"
+                    android:background="@android:color/transparent"
+                    android:text="결제하기"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

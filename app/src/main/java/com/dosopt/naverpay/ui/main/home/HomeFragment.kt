@@ -28,11 +28,11 @@ class HomeFragment : Fragment() {
 
         binding.tvTabMembership.setOnClickListener {
             selectTab(binding.tvTabMembership, binding.vTabMembershipBottom)
-            deselectTab(binding.tvTabPay, binding.vTapPayBottom)
+            deselectTab(binding.tvTabPayment, binding.vTapPayBottom)
         }
 
-        binding.tvTabPay.setOnClickListener {
-            selectTab(binding.tvTabPay, binding.vTapPayBottom)
+        binding.tvTabPayment.setOnClickListener {
+            selectTab(binding.tvTabPayment, binding.vTapPayBottom)
             deselectTab(binding.tvTabMembership, binding.vTabMembershipBottom)
         }
     }
