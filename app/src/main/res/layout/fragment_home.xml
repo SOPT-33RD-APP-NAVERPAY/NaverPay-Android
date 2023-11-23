@@ -45,7 +45,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/v_header"
         android:background="@color/bg_black"
         app:layout_constraintTop_toBottomOf="@id/v_header">
@@ -257,18 +257,18 @@
                 app:layout_constraintStart_toEndOf="@id/tv_recent_payment" />
 
             <RelativeLayout
-                android:id="@+id/rl_allview"
+                android:id="@+id/rl_recent_allview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
                 android:layout_marginEnd="15dp"
                 android:paddingHorizontal="9dp"
                 android:paddingVertical="7dp"
-                app:layout_constraintBottom_toBottomOf="@id/tv_recent_payment"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_recent_payment">
+                app:layout_constraintTop_toBottomOf="@id/cl_card_background">
 
                 <TextView
-                    android:id="@+id/tv_allview"
+                    android:id="@+id/tv_recent_allview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -278,11 +278,11 @@
                     android:textColor="@color/grayscale_gray6" />
 
                 <ImageView
-                    android:id="@+id/iv_allview"
+                    android:id="@+id/iv_recent_allview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/tv_allview"
+                    android:layout_toEndOf="@id/tv_recent_allview"
                     android:src="@drawable/ic_home_arrow_gray" />
 
             </RelativeLayout>
@@ -334,6 +334,98 @@
                 app:layout_constraintEnd_toEndOf="@id/iv_recent_payment"
                 app:layout_constraintTop_toTopOf="@id/iv_recent_payment" />
 
+            <TextView
+                android:id="@+id/tv_recommend"
+                android:layout_width="163dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="52dp"
+                android:text="네이버페이가 가능한 곳을 추천드려요"
+                android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
+                android:textColor="@color/bg_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_recent_payment" />
+
+            <RelativeLayout
+                android:id="@+id/rl_recommend_allview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="15dp"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_recent_payment">
+
+                <TextView
+                    android:id="@+id/tv_recommend_allview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="3dp"
+                    android:text="전체보기"
+                    android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
+                    android:textColor="@color/grayscale_gray6" />
+
+                <ImageView
+                    android:id="@+id/iv_recommend_allview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tv_recommend_allview"
+                    android:src="@drawable/ic_home_arrow_gray" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recommend"
+                android:layout_width="320dp"
+                android:layout_height="260dp"
+                android:layout_marginTop="24dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend"
+                app:spanCount="1" />
+
+            <ImageView
+                android:id="@+id/iv_recommend_map"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/rectangle_transparent_radius_6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_recommend" />
+
+            <RelativeLayout
+                android:id="@+id/rl_recommend_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="@id/iv_recommend_map"
+                app:layout_constraintEnd_toEndOf="@id/iv_recommend_map"
+                app:layout_constraintStart_toStartOf="@id/iv_recommend_map"
+                app:layout_constraintTop_toTopOf="@id/iv_recommend_map">
+
+                <ImageView
+                    android:id="@+id/iv_recommend_map_ic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_home_map" />
+
+                <TextView
+                    android:id="@+id/tv_recommend_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/iv_recommend_map_ic"
+                    android:text="지도로 보기"
+                    android:textAppearance="@style/TextAppearance.NaverPay.body_medium_15"
+                    android:textColor="@color/main_lightgreen" />
+            </RelativeLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
