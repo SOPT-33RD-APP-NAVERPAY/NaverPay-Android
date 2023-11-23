@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
+        android:importantForAccessibility="no"
         android:src="@drawable/img_logo"
         app:layout_constraintStart_toStartOf="@id/v_header"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="21dp"
+        android:importantForAccessibility="no"
         android:src="@drawable/ic_home_notice"
         app:layout_constraintEnd_toStartOf="@id/iv_header_menu"
         app:layout_constraintTop_toTopOf="@id/v_header" />
@@ -39,6 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
+        android:importantForAccessibility="no"
         android:src="@drawable/ic_home_menu"
         app:layout_constraintEnd_toEndOf="@id/v_header"
         app:layout_constraintTop_toTopOf="@id/v_header" />
@@ -60,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="현장결제"
+                android:text="@string/tv_tab_payment"
                 android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
                 android:textColor="@color/bg_white"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="멤버십"
+                android:text="@string/tv_tab_membership"
                 android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
                 android:textColor="@color/grayscale_gray7"
                 app:layout_constraintStart_toEndOf="@id/tv_tab_payment"
@@ -113,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="29dp"
-                    android:text="네이버 포인트"
+                    android:text="@string/tv_card_title"
                     android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
                     android:textColor="@color/bg_white"
                     app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_home_uv"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="26dp"
                     android:layout_marginTop="111dp"
-                    android:text="출금계좌"
+                    android:text="@string/tv_card_account_title"
                     android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
                     android:textColor="#99FFFFFF"
                     app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +151,7 @@
                     android:layout_height="24dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="132dp"
-                    android:text="하나 3597"
+                    android:text="@string/tv_card_account"
                     android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_16"
                     android:textColor="@color/bg_white"
                     app:layout_constraintStart_toStartOf="parent"
@@ -157,6 +161,7 @@
                     android:id="@+id/iv_account_arrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_home_arrow_white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_account"
                     app:layout_constraintStart_toEndOf="@id/tv_card_account"
@@ -167,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="31dp"
-                    android:text="보유금액"
+                    android:text="@string/tv_card_balacne_title"
                     android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
                     android:textColor="#99FFFFFF"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_account"
@@ -180,7 +185,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:maxLines="1"
-                    android:text="11,500"
+                    android:text="@string/tv_card_balance"
                     android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
                     android:textColor="@color/bg_white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_balacne_title"
@@ -192,7 +197,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="p"
+                    android:text="@string/tv_card_balance_unit"
                     android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
                     android:textColor="@color/bg_white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_balance"
@@ -204,6 +209,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_home_arrow_white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_balance_unit"
                     app:layout_constraintStart_toEndOf="@id/tv_card_balance_unit"
@@ -226,7 +232,7 @@
                     android:layout_width="320dp"
                     android:layout_height="52dp"
                     android:background="@android:color/transparent"
-                    android:text="결제하기"
+                    android:text="@string/btn_payment"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -239,7 +245,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
                 android:layout_marginTop="56dp"
-                android:text="최근 현장결제"
+                android:text="@string/tv_recent_payment"
                 android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
                 android:textColor="@color/bg_white"
                 app:layout_constraintStart_toStartOf="parent"
@@ -250,7 +256,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
-                android:text="11.16"
+                android:text="@string/tv_recent_date"
                 android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
                 android:textColor="@color/main_lightgreen"
                 app:layout_constraintBottom_toBottomOf="@id/tv_recent_payment"
@@ -273,7 +279,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="3dp"
-                    android:text="전체보기"
+                    android:text="@string/tv_allview"
                     android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
                     android:textColor="@color/grayscale_gray6" />
 
@@ -283,6 +289,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/tv_recent_allview"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_home_arrow_gray" />
 
             </RelativeLayout>
@@ -292,6 +299,7 @@
                 android:layout_width="320dp"
                 android:layout_height="88dp"
                 android:layout_marginTop="20dp"
+                android:importantForAccessibility="no"
                 android:src="@drawable/rectangle_sub_white_radius_6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -302,6 +310,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="14dp"
+                android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_recent_blank"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
@@ -314,7 +323,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:maxLines="1"
-                android:text="GS25 건대점"
+                android:text="@string/tv_recent_place"
                 android:textAppearance="@style/TextAppearance.NaverPay.body_medium_15"
                 android:textColor="@color/bg_black"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
@@ -327,7 +336,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:maxLines="1"
-                android:text="-25,000 원"
+                android:text="@string/tv_recent_price"
                 android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
                 android:textColor="@color/bg_black"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
@@ -340,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
                 android:layout_marginTop="52dp"
-                android:text="네이버페이가 가능한 곳을 추천드려요"
+                android:text="@string/tv_recommend"
                 android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
                 android:textColor="@color/bg_white"
                 app:layout_constraintStart_toStartOf="parent"
@@ -363,7 +372,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="3dp"
-                    android:text="전체보기"
+                    android:text="@string/tv_allview"
                     android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
                     android:textColor="@color/grayscale_gray6" />
 
@@ -373,6 +382,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/tv_recommend_allview"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_home_arrow_gray" />
 
             </RelativeLayout>
@@ -394,6 +404,7 @@
                 android:layout_width="320dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="28dp"
+                android:importantForAccessibility="no"
                 android:src="@drawable/rectangle_transparent_radius_6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -415,6 +426,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="5dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_home_map" />
 
                 <TextView
@@ -422,10 +434,69 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/iv_recommend_map_ic"
-                    android:text="지도로 보기"
+                    android:text="@string/tv_recommend_map"
                     android:textAppearance="@style/TextAppearance.NaverPay.body_medium_15"
                     android:textColor="@color/main_lightgreen" />
             </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="52dp"
+                android:text="@string/tv_event"
+                android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
+                android:textColor="@color/main_lightgreen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_recommend_map" />
+
+            <RelativeLayout
+                android:id="@+id/rl_event_allview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="11dp"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_recommend_map">
+
+                <TextView
+                    android:id="@+id/tv_event_allview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="3dp"
+                    android:text="@string/tv_allview"
+                    android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
+                    android:textColor="@color/grayscale_gray6" />
+
+                <ImageView
+                    android:id="@+id/iv_event_allview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tv_event_allview"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_home_arrow_gray" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_event_list"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="108dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_event" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

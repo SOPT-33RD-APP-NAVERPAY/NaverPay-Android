@@ -6,6 +6,23 @@
     <!-- benefit -->
 
     <!-- home -->
+    <string name="tv_tab_payment">현장결제</string>
+    <string name="tv_tab_membership">멤버십</string>
+    <string name="tv_card_title">네이버 포인트</string>
+    <string name="tv_card_account_title">출금계좌</string>
+    <string name="tv_card_account">하나 3597</string>
+    <string name="tv_card_balacne_title">보유금액</string>
+    <string name="tv_card_balance">11,500</string>
+    <string name="tv_card_balance_unit">p</string>
+    <string name="btn_payment">결제하기</string>
+    <string name="tv_recent_payment">최근 현장결제</string>
+    <string name="tv_recent_date">11.16</string>
+    <string name="tv_allview">전체보기</string>
+    <string name="tv_recent_place">GS25 건대점</string>
+    <string name="tv_recent_price">-25,000 원</string>
+    <string name="tv_recommend">네이버페이가 가능한 곳을 추천드려요</string>
+    <string name="tv_recommend_map">지도로 보기</string>
+    <string name="tv_event">이달의 이벤트</string>
 
     <!-- place -->
 
