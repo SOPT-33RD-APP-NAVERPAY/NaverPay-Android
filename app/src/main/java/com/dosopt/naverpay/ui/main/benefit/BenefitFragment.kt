@@ -16,6 +16,8 @@ import com.dosopt.naverpay.ui.main.benefit.adapter.AdmobAdapter
 import com.dosopt.naverpay.ui.main.benefit.adapter.CardMenuAdapter
 import com.dosopt.naverpay.ui.main.benefit.adapter.ImmediateBrandAdapter
 import com.dosopt.naverpay.ui.main.benefit.adapter.PopularBrandAdapter
+import com.dosopt.naverpay.ui.main.benefit.decorator.CardMenuItemDecoration
+import com.dosopt.naverpay.ui.main.benefit.decorator.DividerItemDecoration
 import com.dosopt.naverpay.util.fragment.toast
 
 class BenefitFragment : Fragment() {

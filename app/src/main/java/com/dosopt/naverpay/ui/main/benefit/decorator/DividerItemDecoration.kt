@@ -1,4 +1,4 @@
-package com.dosopt.naverpay.ui.main.benefit
+package com.dosopt.naverpay.ui.main.benefit.decorator
 
 import android.content.Context
 import android.graphics.Canvas
