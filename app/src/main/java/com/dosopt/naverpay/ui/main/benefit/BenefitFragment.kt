@@ -117,6 +117,7 @@ class BenefitFragment : Fragment() {
         menuButtons.forEach { (button, states) ->
             button.setOnClickListener { updateMenuButtons(button, menuButtons) }
         }
+        binding.ibBenefitPointMenu1.setBackgroundResource(R.drawable.ic_point_menu_1_on)
     }
 
     private fun updateMenuButtons(
