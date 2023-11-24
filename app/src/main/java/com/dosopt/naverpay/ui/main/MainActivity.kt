@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDefaultFragment() {
-        replaceFragment(HomeFragment())
+        replaceFragment(BenefitFragment())
     }
 
     private fun setupDefaultBottomNavigation() {
