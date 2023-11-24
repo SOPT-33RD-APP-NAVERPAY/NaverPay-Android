@@ -41,7 +41,11 @@ class BenefitFragment : Fragment() {
     }
 
     private fun setupRecyclerViews() {
-        setupRecyclerView(binding.rvBenefitPointMenu, LinearLayoutManager.HORIZONTAL, CardMenuAdapter())
+        setupRecyclerView(binding.rvBenefitPointMenu,
+            LinearLayoutManager.HORIZONTAL,
+            CardMenuAdapter(),
+            CardMenuItemDecoration(requireContext())
+        )
         setupRecyclerView(
             binding.rvBenefitPopularBrand,
             LinearLayoutManager.VERTICAL,
@@ -53,6 +57,8 @@ class BenefitFragment : Fragment() {
             ImmediateBrandAdapter(),
             DividerItemDecoration(requireContext())
         )
+
+        binding.rvBenefitImmediateBrand.isEnabled = false
     }
 
     private fun setupRecyclerView(
@@ -91,8 +97,9 @@ class BenefitFragment : Fragment() {
         }
 
         benefitViewModel.mockUserInfo.observe(viewLifecycleOwner) { userInfo ->
-            binding.tvBenefitUserName.text = userInfo.user_name
-            binding.tvBenefitUserPoint.text = userInfo.user_point.toString()
+            binding.tvBenefitUserName.text = getString(R.string.benefit_name, userInfo.user_name)
+            val formattedPoints = String.format("%,d", userInfo.user_point.toInt())
+            binding.tvBenefitUserPoint.text = getString(R.string.benefit_user_point, formattedPoints)
         }
     }
 
