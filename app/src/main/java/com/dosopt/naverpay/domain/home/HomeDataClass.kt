@@ -75,7 +75,7 @@ data class Brand(
     val place: String,
 
     @SerialName("logo_img_url")
-    val logoImgUrl: String,
+    val logoImgUrl: Int,
 
     @SerialName("discount_content")
     val discountContent: String,

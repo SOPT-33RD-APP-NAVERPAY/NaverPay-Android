@@ -1,4 +1,4 @@
-package com.dosopt.naverpay.ui.main.home.viewmodel
+package com.dosopt.naverpay.ui.main.home
 
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.domain.home.ApiResponse
@@ -27,28 +27,28 @@ class HomeViewModel {
                     id = 1,
                     name = "CU",
                     place = "건대점",
-                    logoImgUrl = "",
+                    logoImgUrl = R.drawable.img_brand_1,
                     discountContent = "네플멤 회원은 CU 최대"
                 ),
                 Brand(
                     id = 2,
                     name = "파리바게뜨",
                     place = "건대점",
-                    logoImgUrl = "",
+                    logoImgUrl = R.drawable.img_brand_2,
                     discountContent = "현장결제 및 포인트 더블혜택"
                 ),
                 Brand(
                     id = 3,
                     name = "신라호텔",
                     place = " ",
-                    logoImgUrl = "...",
+                    logoImgUrl = R.drawable.img_brand_3,
                     discountContent = "30만원 이상 결제시 1만원"
                 ),
                 Brand(
                     id = 4,
                     name = "도미노피자",
                     place = "건대점",
-                    logoImgUrl = "",
+                    logoImgUrl = R.drawable.img_brand_4,
                     discountContent = "QR결제시 최대 2천원 할인"
                 )
             )
@@ -69,13 +69,15 @@ class HomeViewModel {
             detail = "매일매일 더블혜택",
             percentage = "최대 10%",
             background = "#00472E"
-        ),EventInfo(
+        ),
+        EventInfo(
             id = 2,
             logo = R.drawable.img_event_2,
             detail = "매일매일 더블혜택",
             percentage = "최대 20%",
             background = "#6D2993"
-        ),EventInfo(
+        ),
+        EventInfo(
             id = 3,
             logo = R.drawable.img_event_3,
             detail = "매일매일 더블혜택",

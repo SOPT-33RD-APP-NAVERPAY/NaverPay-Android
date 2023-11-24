@@ -1,5 +1,6 @@
 package com.dosopt.naverpay.ui.main.home
 
+import BrandItemDecoration
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
@@ -11,14 +12,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentHomeBinding
 import com.dosopt.naverpay.domain.home.CardInfo
+import com.dosopt.naverpay.ui.main.home.adapter.BrandAdapter
 import com.dosopt.naverpay.ui.main.home.adapter.CardAdapter
 import com.dosopt.naverpay.ui.main.home.adapter.EventAdapter
-import com.dosopt.naverpay.ui.main.home.viewmodel.HomeViewModel
+import com.dosopt.naverpay.ui.main.place.PlaceFragment
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -27,9 +30,10 @@ class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding
         get() = requireNotNull(_binding) { "_binding is  null" }
 
-    private val selectedCardList = mutableListOf<CardInfo>()
     private lateinit var cardAdapter: CardAdapter
     private lateinit var eventAdapter: EventAdapter
+    private lateinit var brandAdapter: BrandAdapter
+    private val selectedCardList = mutableListOf<CardInfo>()
     private val defaultSelectedCardId = 1
     private val viewModel = HomeViewModel()
 
@@ -45,11 +49,15 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupTabs()
-        setupCardRecyclerView()
-        setupEventRecyclerView()
-        setupTitleColor()
         setupRecentPayment()
 
+        setupCardRecyclerView()
+        setupEventRecyclerView()
+        setupBrandRecyclerView()
+
+        setupTitleColor()
+
+        moveToRecommend()
     }
 
     private fun setupTabs() {
@@ -77,7 +85,8 @@ class HomeFragment : Fragment() {
         defaultSelectedCard?.let { cardAdapter.setSelectedCard(it) }
 
         with(binding.rvCardList) {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = cardAdapter
         }
         cardAdapter.submitList(viewModel.cardList)
@@ -109,7 +118,8 @@ class HomeFragment : Fragment() {
         eventAdapter = EventAdapter(viewModel.eventList)
 
         with(binding.rvEventList) {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = eventAdapter
         }
     }
@@ -125,13 +135,18 @@ class HomeFragment : Fragment() {
             }
 
             val formatter = DateTimeFormatter.ofPattern("yyyy. MM. dd a hh:mm:ss")
-            val parsedDate = LocalDateTime.parse(viewModel.mockApiResponse.data.onsitePayment.paymentDate, formatter)
+            val parsedDate = LocalDateTime.parse(
+                viewModel.mockApiResponse.data.onsitePayment.paymentDate,
+                formatter
+            )
             val formattedDate = parsedDate.format(DateTimeFormatter.ofPattern("MM.dd"))
 
             tvRecentPlace.text =
                 "${viewModel.mockApiResponse.data.onsitePayment.name} ${viewModel.mockApiResponse.data.onsitePayment.place}"
             tvRecentPrice.text =
-                "-${formatBalance(viewModel.mockApiResponse.data.onsitePayment.amount)} " + getString(R.string.tv_recent_price_unit)
+                "-${formatBalance(viewModel.mockApiResponse.data.onsitePayment.amount)} " + getString(
+                    R.string.tv_recent_price_unit
+                )
             tvRecentDate.text = formattedDate
         }
     }
@@ -173,5 +188,24 @@ class HomeFragment : Fragment() {
 
     private fun formatBalance(balance: Int): String {
         return String.format("%,d", balance)
+    }
+
+    private fun setupBrandRecyclerView() {
+        val spacingInPixels = (16 * resources.displayMetrics.density).toInt()
+        brandAdapter = BrandAdapter(viewModel.mockApiResponse.data.brandList)
+
+        with(binding.rvRecommend) {
+            layoutManager = GridLayoutManager(requireContext(), 1) // or your desired span count
+            addItemDecoration(BrandItemDecoration(requireContext(), 1, spacingInPixels))
+            adapter = brandAdapter
+        }
+    }
+    private fun moveToRecommend() {
+        binding.rlRecommendAllview.setOnClickListener {
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fcv_main, PlaceFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
     }
 }

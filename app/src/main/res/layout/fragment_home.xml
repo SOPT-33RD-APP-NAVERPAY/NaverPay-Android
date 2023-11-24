@@ -215,18 +215,6 @@
                     app:layout_constraintStart_toEndOf="@id/tv_card_balance_unit"
                     app:layout_constraintTop_toTopOf="@id/tv_card_balance_unit" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_card_list"
-                    android:layout_width="wrap_content"
-                    android:layout_height="81dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="183dp"
-                    android:background="@drawable/gradient_linear_gd"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <Button
                     android:id="@+id/btn_payment"
                     android:layout_width="320dp"
@@ -238,6 +226,19 @@
                     app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_card_list"
+                android:layout_width="wrap_content"
+                android:layout_height="81dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="183dp"
+                android:background="@drawable/gradient_linear_gd"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                app:layout_constraintStart_toStartOf="@id/cl_card_background"
+                app:layout_constraintTop_toTopOf="@id/cl_card_background" />
 
             <TextView
                 android:id="@+id/tv_recent_payment"
