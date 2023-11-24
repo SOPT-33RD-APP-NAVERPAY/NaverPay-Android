@@ -1,6 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_benefit_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="11dp"
+            android:text="혜택"
+            android:textAppearance="@style/TextAppearance.NaverPay.head_extrabold_28"
+            android:textColor="@color/sub_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_alert"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@id/iv_benefit_menu"
+            app:layout_constraintTop_toTopOf="@id/iv_benefit_menu" />
+
+        <ImageView
+            android:id="@+id/iv_benefit_menu"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="23dp"
+            android:src="@drawable/ic_round_menu"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_benefit_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_benefit_point"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/rectangle_white_radius_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_benefit_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
+                    android:textColor="@color/sub_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="서재원님의 포인트" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_benefit_point_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="21dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_benefit_user_name"
+                    tools:listitem="@layout/item_benefit_card" />
+
+                <TextView
+                    android:id="@+id/tv_benefit_user_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
+                    android:textColor="@color/sub_black"
+                    app:layout_constraintEnd_toStartOf="@id/iv_benefit_point_arrow"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="11,500원" />
+
+                <ImageView
+                    android:id="@+id/iv_benefit_point_arrow"
+                    android:layout_width="18dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_pointarrow"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_benefit_popular_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="실시간 인기 현장결제 혜택!"
+                android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
+                android:textColor="@color/sub_black"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/cl_benefit_point" />
+
+            <TextView
+                android:id="@+id/tv_benefit_popular_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="나의 최근 소비내역을 기반으로 추천해드려요."
+                android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_13"
+                android:textColor="@color/grayscale_gray6"
+                app:layout_constraintStart_toStartOf="@id/tv_benefit_popular_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_title" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="41dp"
+                android:src="@drawable/ic_pointarrow"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/cl_benefit_point" />
+
+            <LinearLayout
+                android:id="@+id/cl_benefit_popular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/rectangle_white_radius_12"
+                android:orientation="vertical"
+                android:paddingHorizontal="11dp"
+                android:paddingVertical="24dp"
+                app:layout_constraintEnd_toEndOf="@id/cl_benefit_point"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_description">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_benefit_popular_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_benefit_popular_brand" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rectangle_palegreen_radius_10"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_benefit_location"
+                        android:layout_width="23dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="14dp"
+                        android:src="@drawable/ic_location" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="17dp"
+                        android:text="내 주변 매장 찾기"
+                        android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
+                        android:textColor="@color/main_green" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_benefit_point_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="32dp"
+                android:text="손 쉽게 모으는 포인트!"
+                android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/cl_benefit_popular" />
+
+            <LinearLayout
+                android:id="@+id/cl_benefit_point_menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@color/bg_gray"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@id/cl_benefit_point"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/tv_benefit_point_title">
+
+                <ImageButton
+                    android:id="@+id/ib_benefit_point_menu_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_point_menu_1_off" />
+
+                <ImageButton
+                    android:id="@+id/ib_benefit_point_menu_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_point_menu_2_off" />
+
+                <ImageButton
+                    android:id="@+id/ib_benefit_point_menu_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_point_menu_3_off" />
+
+                <ImageButton
+                    android:id="@+id/ib_benefit_point_menu_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_point_menu_4_off" />
+
+                <ImageButton
+                    android:id="@+id/ib_benefit_point_menu_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_point_menu_5_off" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_benefit_point_all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rectangle_white_radius_12"
+                app:layout_constraintEnd_toEndOf="@id/cl_benefit_point"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/cl_benefit_point_menu">
+
+                <TextView
+                    android:id="@+id/tv_benefit_point_all_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="20dp"
+                    android:text="즉시적립 혜택 전체보기"
+                    android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_benefit_immediate_brand"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="3dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_benefit_point_all_title"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_benefit_immediate_brand" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_benefit_admob"
+                android:layout_width="0dp"
+                android:layout_height="92dp"
+                android:layout_marginTop="18dp"
+                app:layout_constraintEnd_toEndOf="@id/cl_benefit_point"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/cl_benefit_point_all" />
+
+            <TextView
+                android:id="@+id/tv_benefit_point_qna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="68dp"
+                android:text="광고&amp;포인트 제휴문의"
+                android:textAppearance="@style/TextAppearance.NaverPay.detail_smbold_12"
+                android:textColor="@color/grayscale_gray6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toBottomOf="@id/vp_benefit_admob" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="12dp"
+                android:background="@color/grayscale_gray5"
+                app:layout_constraintBottom_toBottomOf="@id/tv_benefit_point_qna"
+                app:layout_constraintEnd_toStartOf="@id/tv_benefit_point_qna_event"
+                app:layout_constraintStart_toEndOf="@id/tv_benefit_point_qna"
+                app:layout_constraintTop_toTopOf="@id/tv_benefit_point_qna" />
+
+            <TextView
+                android:id="@+id/tv_benefit_point_qna_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이벤트 고객문의"
+                android:textAppearance="@style/TextAppearance.NaverPay.detail_smbold_12"
+                android:textColor="@color/main_green"
+                app:layout_constraintEnd_toStartOf="@id/iv_benefit_admob_arrow"
+                app:layout_constraintTop_toTopOf="@id/tv_benefit_point_qna" />
+
+            <ImageView
+                android:id="@+id/iv_benefit_admob_arrow"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="46dp"
+                android:src="@drawable/ic_qnaarrow"
+                app:layout_constraintBottom_toBottomOf="@id/tv_benefit_point_qna"
+                app:layout_constraintEnd_toEndOf="@id/cl_benefit_point"
+                app:layout_constraintTop_toTopOf="@id/tv_benefit_point_qna" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
