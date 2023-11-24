@@ -16,11 +16,9 @@ import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentHomeBinding
 import com.dosopt.naverpay.domain.home.CardInfo
-import com.dosopt.naverpay.domain.home.cardList
-import com.dosopt.naverpay.domain.home.eventList
-import com.dosopt.naverpay.domain.home.mockApiResponse
 import com.dosopt.naverpay.ui.main.home.adapter.CardAdapter
 import com.dosopt.naverpay.ui.main.home.adapter.EventAdapter
+import com.dosopt.naverpay.ui.main.home.viewmodel.HomeViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -33,6 +31,7 @@ class HomeFragment : Fragment() {
     private lateinit var cardAdapter: CardAdapter
     private lateinit var eventAdapter: EventAdapter
     private val defaultSelectedCardId = 1
+    private val viewModel = HomeViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,14 +73,14 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val defaultSelectedCard = cardList.find { it.id == defaultSelectedCardId }
+        val defaultSelectedCard = viewModel.cardList.find { it.id == defaultSelectedCardId }
         defaultSelectedCard?.let { cardAdapter.setSelectedCard(it) }
 
         with(binding.rvCardList) {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = cardAdapter
         }
-        cardAdapter.submitList(cardList)
+        cardAdapter.submitList(viewModel.cardList)
     }
 
     private fun setupTitleColor() {
@@ -107,7 +106,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupEventRecyclerView() {
-        eventAdapter = EventAdapter(eventList)
+        eventAdapter = EventAdapter(viewModel.eventList)
 
         with(binding.rvEventList) {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -118,21 +117,21 @@ class HomeFragment : Fragment() {
     private fun setupRecentPayment() {
         with(binding) {
             val tvCardBalance = tvCardBalance
-            tvCardBalance.text = formatBalance(mockApiResponse.data.userPoint)
+            tvCardBalance.text = formatBalance(viewModel.mockApiResponse.data.userPoint)
 
-            ivRecentPlace.load(mockApiResponse.data.onsitePayment.logoImgUrl.toInt()) {
+            ivRecentPlace.load(viewModel.mockApiResponse.data.onsitePayment.logoImgUrl.toInt()) {
                 crossfade(true)
                 error(R.drawable.img_recent_blank)
             }
 
             val formatter = DateTimeFormatter.ofPattern("yyyy. MM. dd a hh:mm:ss")
-            val parsedDate = LocalDateTime.parse(mockApiResponse.data.onsitePayment.paymentDate, formatter)
+            val parsedDate = LocalDateTime.parse(viewModel.mockApiResponse.data.onsitePayment.paymentDate, formatter)
             val formattedDate = parsedDate.format(DateTimeFormatter.ofPattern("MM.dd"))
 
             tvRecentPlace.text =
-                "${mockApiResponse.data.onsitePayment.name} ${mockApiResponse.data.onsitePayment.place}"
+                "${viewModel.mockApiResponse.data.onsitePayment.name} ${viewModel.mockApiResponse.data.onsitePayment.place}"
             tvRecentPrice.text =
-                "-${formatBalance(mockApiResponse.data.onsitePayment.amount)} " + getString(R.string.tv_recent_price_unit)
+                "-${formatBalance(viewModel.mockApiResponse.data.onsitePayment.amount)} " + getString(R.string.tv_recent_price_unit)
             tvRecentDate.text = formattedDate
         }
     }
