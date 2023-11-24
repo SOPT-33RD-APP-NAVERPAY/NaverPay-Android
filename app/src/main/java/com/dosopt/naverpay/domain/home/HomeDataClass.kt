@@ -1,7 +1,14 @@
 package com.dosopt.naverpay.domain.home
 
+import com.dosopt.naverpay.R
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+
+@Serializable
+data class CardInfo(
+    @SerialName("id") val id: Int,
+    @SerialName("img") val img: Int,
+)
 
 @Serializable
 data class ApiResponse(
@@ -110,4 +117,11 @@ val mockApiResponse = ApiResponse(
             )
         )
     )
+)
+
+val cardList = listOf(
+    CardInfo(1, R.drawable.img_card1),
+    CardInfo(2, R.drawable.img_card2),
+    CardInfo(3, R.drawable.img_card3),
+    CardInfo(4, R.drawable.img_card_add)
 )

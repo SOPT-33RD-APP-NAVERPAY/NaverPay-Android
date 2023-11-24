@@ -7,13 +7,21 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentHomeBinding
+import com.dosopt.naverpay.domain.home.CardInfo
+import com.dosopt.naverpay.domain.home.cardList
+import com.dosopt.naverpay.ui.main.home.adapter.CardAdapter
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
         get() = requireNotNull(_binding) { "_binding is  null" }
+
+    private val selectedCardList = mutableListOf<CardInfo>()
+    private lateinit var cardAdapter: CardAdapter
+    private val defaultSelectedCardId = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +43,22 @@ class HomeFragment : Fragment() {
             selectTab(binding.tvTabPayment, binding.vTapPayBottom)
             deselectTab(binding.tvTabMembership, binding.vTabMembershipBottom)
         }
+
+        cardAdapter = CardAdapter { selectedCard ->
+            if (selectedCard.id != 4) {
+                handleCardSelection(selectedCard)
+            }
+        }
+
+        val defaultSelectedCard = cardList.find { it.id == defaultSelectedCardId }
+        defaultSelectedCard?.let { cardAdapter.setSelectedCard(it) }
+
+        binding.rvCardList.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = cardAdapter
+        }
+        cardAdapter.submitList(cardList)
     }
 
     private fun selectTab(textView: TextView, bottomView: View) {
@@ -57,8 +81,18 @@ class HomeFragment : Fragment() {
         )
     }
 
+    private fun handleCardSelection(selectedCard: CardInfo) {
+        if (selectedCardList.contains(selectedCard)) {
+            selectedCardList.remove(selectedCard)
+        } else {
+            selectedCardList.add(selectedCard)
+        }
+
+        cardAdapter.setSelectedCard(selectedCard)
+    }
+
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
     }
 }
