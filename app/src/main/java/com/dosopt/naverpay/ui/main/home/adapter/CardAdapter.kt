@@ -48,7 +48,6 @@ class CardAdapter(
 
     fun setSelectedCard(card: CardInfo?) {
         if (card != selectedCard) {
-            // 선택된 카드가 변경된 경우에만 갱신
             val oldSelectedCard = selectedCard
             selectedCard = card
 

@@ -12,7 +12,7 @@
     <string name="tv_card_account_title">출금계좌</string>
     <string name="tv_card_account">하나 3597</string>
     <string name="tv_card_balacne_title">보유금액</string>
-    <string name="tv_card_balance">11,500</string>
+    <string name="tv_card_balance">0</string>
     <string name="tv_card_balance_unit">p</string>
     <string name="btn_payment">결제하기</string>
     <string name="tv_recent_payment">최근 현장결제</string>

@@ -12,6 +12,7 @@ import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentHomeBinding
 import com.dosopt.naverpay.domain.home.CardInfo
 import com.dosopt.naverpay.domain.home.cardList
+import com.dosopt.naverpay.domain.home.mockApiResponse
 import com.dosopt.naverpay.ui.main.home.adapter.CardAdapter
 
 class HomeFragment : Fragment() {
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
     private val selectedCardList = mutableListOf<CardInfo>()
     private lateinit var cardAdapter: CardAdapter
     private val defaultSelectedCardId = 1
+    private lateinit var tvCardBalance: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,6 +61,9 @@ class HomeFragment : Fragment() {
             adapter = cardAdapter
         }
         cardAdapter.submitList(cardList)
+
+        tvCardBalance = binding.tvCardBalance
+        tvCardBalance.text = formatBalance(mockApiResponse.data.userPoint)
     }
 
     private fun selectTab(textView: TextView, bottomView: View) {
@@ -94,5 +99,9 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun formatBalance(balance: Int): String {
+        return String.format("%,d", balance)
     }
 }
