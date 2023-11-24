@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemCardDeselectedBinding
 import com.dosopt.naverpay.databinding.ItemCardSelectedBinding
@@ -51,12 +52,14 @@ class CardAdapter(
             val oldSelectedCard = selectedCard
             selectedCard = card
 
-            // 변경된 부분만 갱신
             if (oldSelectedCard != null && card != null) {
-                notifyItemChanged(currentList.indexOf(oldSelectedCard))
-                notifyItemChanged(currentList.indexOf(card))
-            } else {
-                notifyDataSetChanged()
+                val oldSelectedCardIndex = currentList.indexOf(oldSelectedCard)
+                val newSelectedCardIndex = currentList.indexOf(card)
+
+                if (oldSelectedCardIndex != newSelectedCardIndex) {
+                    notifyItemChanged(oldSelectedCardIndex)
+                    notifyItemChanged(newSelectedCardIndex)
+                }
             }
         }
     }
@@ -76,6 +79,9 @@ class SelectedCardViewHolder(
         binding.ivCardSelected.load(cardInfo.img) {
             crossfade(true)
             error(R.drawable.img_card_blank)
+            if (cardInfo.img != R.drawable.img_card1 && cardInfo.img != R.drawable.img_card_blank) {
+                transformations(RoundedCornersTransformation(radius = 8f))
+            }
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
     }
@@ -90,6 +96,9 @@ class DeselectedCardViewHolder(
         binding.ivCardDeselected.load(cardInfo.img) {
             crossfade(true)
             error(R.drawable.img_card_blank)
+            if (cardInfo.img != R.drawable.img_card1 && cardInfo.img != R.drawable.img_card_blank) {
+                transformations(RoundedCornersTransformation(radius = 8f))
+            }
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
     }
