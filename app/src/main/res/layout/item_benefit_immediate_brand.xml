@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="18dp">
+
+    <ImageView
+        android:id="@+id/iv_benefit_immediate_logo"
+        android:layout_width="56dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_location" />
+
+    <TextView
+        android:id="@+id/tv_benefit_immediate_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.body_bold_14"
+        app:layout_constraintStart_toEndOf="@id/iv_benefit_immediate_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CU" />
+
+    <TextView
+        android:id="@+id/tv_benefit_immediate_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_13"
+        android:textColor="@color/sub_black"
+        app:layout_constraintStart_toStartOf="@id/tv_benefit_immediate_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_benefit_immediate_name"
+        tools:text="네플멤 회원은 CU 최대" />
+
+    <TextView
+        android:id="@+id/tv_benefit_immediate_type"
+        android:layout_width="68dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rectangle_palegreen2_radius_100"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.NaverPay.body_bold_14"
+        android:textColor="@color/main_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="즉시혜택" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
