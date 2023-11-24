@@ -48,7 +48,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/v_header"
         android:background="@color/bg_black"
         app:layout_constraintTop_toBottomOf="@id/v_header">
@@ -300,7 +300,7 @@
                 android:layout_height="88dp"
                 android:layout_marginTop="20dp"
                 android:importantForAccessibility="no"
-                android:src="@drawable/rectangle_sub_white_radius_6"
+                android:src="@drawable/rectangle_bg_white_radius_6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_recent_payment" />
@@ -489,7 +489,7 @@
                 android:layout_height="84dp"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="108dp"
+                android:layout_marginBottom="168dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:paddingStart="12dp"
