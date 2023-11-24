@@ -95,7 +95,7 @@ class DeselectedCardViewHolder(
         binding.ivCardDeselected.load(cardInfo.img) {
             crossfade(true)
             error(R.drawable.img_card_blank)
-            if (cardInfo.img != R.drawable.img_card1 && cardInfo.img != R.drawable.img_card_blank) {
+            if (cardInfo.img != R.drawable.img_card1 && cardInfo.img != R.drawable.img_card_add) {
                 transformations(RoundedCornersTransformation(radius = 8f))
             }
         }

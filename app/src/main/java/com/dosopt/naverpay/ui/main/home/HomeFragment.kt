@@ -63,6 +63,8 @@ class HomeFragment : Fragment() {
         }
         cardAdapter.submitList(cardList)
 
+        // 가짜 계좌 넣기
+
         tvCardBalance = binding.tvCardBalance
         tvCardBalance.text = formatBalance(mockApiResponse.data.userPoint)
 
@@ -71,8 +73,8 @@ class HomeFragment : Fragment() {
             error(R.drawable.img_recent_blank)
         }
 
+        // 가짜 최근결제 넣기
         binding.tvRecentPlace.text = "${mockApiResponse.data.onsitePayment.name} ${mockApiResponse.data.onsitePayment.place}"
-
         binding.tvRecentPrice.text = "-${formatBalance(mockApiResponse.data.onsitePayment.amount)} " + getString(R.string.tv_recent_price_unit)
 
     }
