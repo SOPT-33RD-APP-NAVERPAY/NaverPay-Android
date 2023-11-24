@@ -10,7 +10,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="0dp"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
         android:layout_height="92dp"
         android:src="@drawable/img_ad_paris"/>
 
