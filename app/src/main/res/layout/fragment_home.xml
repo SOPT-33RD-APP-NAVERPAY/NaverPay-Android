@@ -147,7 +147,7 @@
 
                 <TextView
                     android:id="@+id/tv_card_account"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="132dp"
@@ -171,25 +171,25 @@
                     android:id="@+id/tv_card_balacne_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="143dp"
                     android:text="@string/tv_card_balacne_title"
                     android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_14"
                     android:textColor="#99FFFFFF"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_account"
-                    app:layout_constraintStart_toEndOf="@id/tv_card_account"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_card_account" />
 
                 <TextView
                     android:id="@+id/tv_card_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="51dp"
                     android:maxLines="1"
                     android:text="@string/tv_card_balance"
                     android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
                     android:textColor="@color/bg_white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_balacne_title"
-                    app:layout_constraintStart_toEndOf="@id/tv_card_balacne_title"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_card_balacne_title" />
 
                 <TextView
@@ -217,7 +217,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_card_list"
-                    android:layout_width="360dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="81dp"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="183dp"
