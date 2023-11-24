@@ -31,7 +31,7 @@ class PopularBrandAdapter(
     override fun onBindViewHolder(holder: PopularBrandViewHolder, position: Int) {
         holder.onBind(getItem(position))
     }
-    
+
     class PopularBrandViewHolder(
         private val binding: ItemBenefitPopularBrandBinding,
         private val onLikeClicked: (Brand) -> Unit
@@ -49,6 +49,11 @@ class PopularBrandAdapter(
                 tvBenefitPopularName.text = brand.name
                 tvBenefitPopularContent.text = brand.discount_content
                 tvBenefitPopularType.text = brand.discount_type
+            }
+            if (brand.id == 1L) {
+                binding.tvBenefitPopularRank.setTextColor(
+                    binding.root.context.getColor(R.color.main_green)
+                )
             }
         }
 
