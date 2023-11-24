@@ -344,7 +344,7 @@
                 app:layout_constraintTop_toTopOf="@id/iv_recent_payment" />
 
             <TextView
-                android:id="@+id/tv_recommend"
+                android:id="@+id/tv_recommend_title"
                 android:layout_width="163dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
@@ -397,7 +397,7 @@
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_recommend"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend_title"
                 app:spanCount="1" />
 
             <ImageView

@@ -16,7 +16,7 @@
     <string name="tv_card_balance_unit">p</string>
     <string name="btn_payment">결제하기</string>
     <string name="tv_recent_payment">최근 현장결제</string>
-    <string name="tv_recent_date">11.16</string>
+    <string name="tv_recent_date">00.00</string>
     <string name="tv_allview">전체보기</string>
     <string name="tv_recent_place">GS25 건대점</string>
     <string name="tv_recent_price">0 원</string>

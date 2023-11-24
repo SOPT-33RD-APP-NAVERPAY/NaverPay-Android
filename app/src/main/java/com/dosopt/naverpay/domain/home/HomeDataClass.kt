@@ -11,6 +11,15 @@ data class CardInfo(
 )
 
 @Serializable
+data class EventInfo(
+    @SerialName("id") val id: Int,
+    @SerialName("logo") val logo: Int,
+    @SerialName("detail") val detail: String,
+    @SerialName("percentage") val percentage: String,
+    @SerialName("background") val background: String,
+)
+
+@Serializable
 data class ApiResponse(
     @SerialName("status")
     val status: Int,
@@ -120,8 +129,30 @@ val mockApiResponse = ApiResponse(
 )
 
 val cardList = listOf(
-    CardInfo(1, R.drawable.img_card1),
-    CardInfo(2, R.drawable.img_card2),
-    CardInfo(3, R.drawable.img_card3),
+    CardInfo(1, R.drawable.img_card_1),
+    CardInfo(2, R.drawable.img_card_2),
+    CardInfo(3, R.drawable.img_card_3),
     CardInfo(4, R.drawable.img_card_add)
+)
+
+val eventList = listOf(
+    EventInfo(
+        id = 1,
+        logo = R.drawable.img_event_1,
+        detail = "매일매일 더블혜택",
+        percentage = "최대 10%",
+        background = "#00472E"
+    ),EventInfo(
+        id = 2,
+        logo = R.drawable.img_event_2,
+        detail = "매일매일 더블혜택",
+        percentage = "최대 20%",
+        background = "#6D2993"
+    ),EventInfo(
+        id = 3,
+        logo = R.drawable.img_event_3,
+        detail = "매일매일 더블혜택",
+        percentage = "최대 30%",
+        background = "#003985"
+    ),
 )

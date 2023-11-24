@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_event_background"
+        android:layout_width="248dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="6dp">
+
+        <ImageView
+            android:id="@+id/iv_event_background"
+            android:layout_width="248dp"
+            android:layout_height="84dp"
+            android:importantForAccessibility="no"
+            android:background="@drawable/rectangle_bg_white_radius_6" />
+
+        <ImageView
+            android:id="@+id/iv_event_logo"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="13dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerInside"
+            android:src="@drawable/circle_bg_white" />
+
+        <TextView
+            android:id="@+id/tv_event_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="25dp"
+            android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_12"
+            android:textColor="@color/bg_white" />
+
+        <TextView
+            android:id="@+id/tv_event_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="40dp"
+            android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_16"
+            android:textColor="@color/bg_white"
+            app:layout_constraintStart_toEndOf="@id/iv_event_logo"
+            app:layout_constraintTop_toBottomOf="@id/tv_event_detail" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
