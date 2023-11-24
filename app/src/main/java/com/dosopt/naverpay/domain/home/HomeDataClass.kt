@@ -82,7 +82,7 @@ val mockApiResponse = ApiResponse(
             id = 1,
             name = "GS25",
             place = "건대점",
-            logoImgUrl = "",
+            logoImgUrl = R.drawable.img_logo_gs25.toString(),
             amount = 25000,
             paymentDate = "2023. 11. 16 오후 12:21:21"
         ),

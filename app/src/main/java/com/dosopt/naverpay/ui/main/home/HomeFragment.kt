@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentHomeBinding
 import com.dosopt.naverpay.domain.home.CardInfo
@@ -64,6 +65,16 @@ class HomeFragment : Fragment() {
 
         tvCardBalance = binding.tvCardBalance
         tvCardBalance.text = formatBalance(mockApiResponse.data.userPoint)
+
+        binding.ivRecentPlace.load(mockApiResponse.data.onsitePayment.logoImgUrl.toInt()) {
+            crossfade(true)
+            error(R.drawable.img_recent_blank)
+        }
+
+        binding.tvRecentPlace.text = "${mockApiResponse.data.onsitePayment.name} ${mockApiResponse.data.onsitePayment.place}"
+
+        binding.tvRecentPrice.text = "-${formatBalance(mockApiResponse.data.onsitePayment.amount)} " + getString(R.string.tv_recent_price_unit)
+
     }
 
     private fun selectTab(textView: TextView, bottomView: View) {

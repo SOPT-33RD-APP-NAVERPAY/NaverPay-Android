@@ -19,7 +19,8 @@
     <string name="tv_recent_date">11.16</string>
     <string name="tv_allview">전체보기</string>
     <string name="tv_recent_place">GS25 건대점</string>
-    <string name="tv_recent_price">-25,000 원</string>
+    <string name="tv_recent_price">0 원</string>
+    <string name="tv_recent_price_unit">원</string>
     <string name="tv_recommend">네이버페이가 가능한 곳을 추천드려요</string>
     <string name="tv_recommend_map">지도로 보기</string>
     <string name="tv_event">이달의 이벤트</string>
