@@ -12,6 +12,8 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentPlaceBinding
+import com.dosopt.naverpay.ui.main.benefit.BenefitFragment
+import com.dosopt.naverpay.ui.main.home.HomeFragment
 
 class PlaceFragment : Fragment() {
     private var _binding: FragmentPlaceBinding? = null
@@ -33,6 +35,8 @@ class PlaceFragment : Fragment() {
         setDiv()
         setupAdapter()
         setupTabs()
+        clickXbtn()
+        clickMapbtn()
     }
 
     //어댑터 붙이기
@@ -126,6 +130,24 @@ class PlaceFragment : Fragment() {
             super.getItemOffsets(outRect, view, parent, state)
             outRect.left = divHeight
             outRect.right = divHeight
+        }
+    }
+
+    private fun clickXbtn() {
+        binding.ivBtnX.setOnClickListener {
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.add(R.id.iv_btn_x, HomeFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+    }
+
+    private fun clickMapbtn() {
+        binding.btnMapBottom.setOnClickListener {
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.add(R.id.btn_map_bottom, BenefitFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
     }
 
