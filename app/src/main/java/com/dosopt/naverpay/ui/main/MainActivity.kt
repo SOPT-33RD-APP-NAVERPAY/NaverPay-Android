@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         return when (itemId) {
             R.id.menu_main_home -> HomeFragment()
             R.id.menu_main_benefit -> BenefitFragment()
-            R.id.menu_main_order -> PlaceFragment()
             else -> null
         }
     }
