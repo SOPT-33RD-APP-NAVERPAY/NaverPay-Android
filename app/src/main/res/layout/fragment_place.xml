@@ -183,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="56dp"
                 android:text="@string/tv_place_recom"
                 android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,10 +193,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="84dp"
-                android:layout_marginTop="475dp"
+                android:layout_marginTop="77dp"
                 android:background="@drawable/rectangle_black_radius_20"
                 app:layout_constraintStart_toEndOf="@id/tv_place_recom"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/layout_rv_place">
 
                 <TextView
                     android:id="@+id/tv_btn_recom"
@@ -252,10 +252,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
-                android:layout_marginTop="815dp"
+                android:layout_marginTop="69dp"
                 android:background="@drawable/rectangle_green_radius_20"
                 app:layout_constraintStart_toEndOf="@id/tv_place_payment"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/layout_rv_recommend">
 
                 <TextView
                     android:id="@+id/tv_btn_map_bottom"
