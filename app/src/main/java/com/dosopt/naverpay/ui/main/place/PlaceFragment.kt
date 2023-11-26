@@ -47,7 +47,7 @@ class PlaceFragment : Fragment() {
 
         with(binding) {
             rvPlace.adapter = placeNearbyAdapter
-            rvRecommend.adapter = placeRecommendAdapter
+            rvPlaceRecommend.adapter = placeRecommendAdapter
             rvPlacePayment.adapter = placePaymentAdapter
         }
 
@@ -81,14 +81,14 @@ class PlaceFragment : Fragment() {
     //탭 눌렀을 때
     private fun setupTabs() {
         with(binding) {
-            tvDome.setOnClickListener {
-                selectTab(tvDome, viRecDome)
-                deselectTab(tvInter, viRecInter)
+            tvPlaceDome.setOnClickListener {
+                selectTab(tvPlaceDome, viPlaceRecDome)
+                deselectTab(tvPlaceInter, viPlaceRecInter)
             }
 
-            tvInter.setOnClickListener {
-                selectTab(tvInter, viRecInter)
-                deselectTab(tvDome, viRecDome)
+            tvPlaceInter.setOnClickListener {
+                selectTab(tvPlaceInter, viPlaceRecInter)
+                deselectTab(tvPlaceDome, viPlaceRecDome)
             }
         }
     }
@@ -97,8 +97,8 @@ class PlaceFragment : Fragment() {
         with(binding) {
             rvPlace.addItemDecoration(VerticalItemDecorator(12))
             rvPlace.addItemDecoration(HorizontalItemDecorator(8))
-            rvRecommend.addItemDecoration(VerticalItemDecorator(12))
-            rvRecommend.addItemDecoration(HorizontalItemDecorator(6))
+            rvPlaceRecommend.addItemDecoration(VerticalItemDecorator(12))
+            rvPlaceRecommend.addItemDecoration(HorizontalItemDecorator(6))
             rvPlacePayment.addItemDecoration(VerticalItemDecorator(12))
             rvPlacePayment.addItemDecoration(HorizontalItemDecorator(8))
         }
@@ -134,18 +134,18 @@ class PlaceFragment : Fragment() {
     }
 
     private fun clickXbtn() {
-        binding.ivBtnX.setOnClickListener {
+        binding.ivPlaceBtnX.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(R.id.iv_btn_x, HomeFragment())
+            transaction.add(R.id.iv_place_btn_x, HomeFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
     }
 
     private fun clickMapbtn() {
-        binding.btnMapBottom.setOnClickListener {
+        binding.btnPlaceMapBottom.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(R.id.btn_map_bottom, BenefitFragment())
+            transaction.add(R.id.btn_place_map_bottom, BenefitFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
