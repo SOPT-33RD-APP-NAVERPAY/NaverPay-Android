@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">NaverPay</string>
+
+    <!-- main -->
+
+    <!-- benefit -->
+
+    <!-- home -->
+
+    <!-- place -->
     <string name="tv_title_place">현장결제 장소</string>
     <string name="tv_dome">국내</string>
     <string name="tv_inter">해외</string>
@@ -12,14 +20,6 @@
     <string name="tv_cu">CU 편의점</string>
     <string name="tv_dis_cu">25m</string>
     <string name="tv_domino">도미노 피자</string>
-
-    <!-- main -->
-
-    <!-- benefit -->
-
-    <!-- home -->
-
-    <!-- place -->
 
     <!-- point -->
 
