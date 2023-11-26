@@ -35,6 +35,18 @@
     <string name="tv_event">이달의 이벤트</string>
 
     <!-- place -->
+    <string name="tv_title_place">현장결제 장소</string>
+    <string name="tv_dome">국내</string>
+    <string name="tv_inter">해외</string>
+    <string name="tv_near_place">원하연님과 가까운 장소</string>
+    <string name="tv_btn_map_top">지도로 보기</string>
+    <string name="tv_place_recom">패션에 관심있는\n원하연님을 위한 추천</string>
+    <string name="tv_btn_recom"><![CDATA[추천 더보기 >]]></string>
+    <string name="tv_place_payment">전국 12만개 가맹점에서\n현장결제 하세요</string>
+    <string name="tv_btn_map_bottom"><![CDATA[지도로 보기 >]]></string>
+    <string name="tv_cu">CU 편의점</string>
+    <string name="tv_dis_cu">25m</string>
+    <string name="tv_domino">도미노 피자</string>
 
     <!-- point -->
 

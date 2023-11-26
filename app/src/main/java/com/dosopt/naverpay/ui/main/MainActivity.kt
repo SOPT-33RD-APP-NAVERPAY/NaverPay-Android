@@ -7,6 +7,7 @@ import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ActivityMainBinding
 import com.dosopt.naverpay.ui.main.benefit.BenefitFragment
 import com.dosopt.naverpay.ui.main.home.HomeFragment
+import com.dosopt.naverpay.ui.main.place.PlaceFragment
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }

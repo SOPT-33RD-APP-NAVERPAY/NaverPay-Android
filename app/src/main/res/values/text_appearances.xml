@@ -8,119 +8,118 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.head_extrabold_28">
-        <item name="fontFamily">@font/roboto_bold</item>
+    <style name="TextAppearance.NaverPay.head_extrabold_28" parent="">
+        <item name="fontFamily">@font/roboto_black</item>
         <item name="android:textSize">28sp</item>
         <item name="lineHeight">28sp</item>
-        <item name="android:textFontWeight">800</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.head_semibold_19">
+    <style name="TextAppearance.NaverPay.head_semibold_19" parent="">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">19sp</item>
         <item name="lineHeight">26sp</item>
         <item name="android:textFontWeight">600</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.head_bold_18">
+    <style name="TextAppearance.NaverPay.head_bold_18" parent="">
         <item name="fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">18sp</item>
         <item name="lineHeight">22sp</item>
         <item name="android:textFontWeight">700</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.subtitle_smbold_17">
+    <style name="TextAppearance.NaverPay.subtitle_smbold_17" parent="">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">17sp</item>
         <item name="lineHeight">24sp</item>
         <item name="android:textFontWeight">600</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.subtitle_bold_16">
+    <style name="TextAppearance.NaverPay.subtitle_bold_16" parent="">
         <item name="fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">20sp</item>
         <item name="android:textFontWeight">700</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.subtitle_smbold_16">
+    <style name="TextAppearance.NaverPay.subtitle_smbold_16" parent="">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">24sp</item>
         <item name="android:textFontWeight">600</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.number_bold_26">
+    <style name="TextAppearance.NaverPay.number_bold_26" parent="">
         <item name="fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">26sp</item>
         <item name="lineHeight">30sp</item>
         <item name="android:textFontWeight">700</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.number_bold_24">
+    <style name="TextAppearance.NaverPay.number_bold_24" parent="">
         <item name="fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">24sp</item>
         <item name="lineHeight">28sp</item>
         <item name="android:textFontWeight">700</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.body_smbold_15">
+    <style name="TextAppearance.NaverPay.body_smbold_15" parent="">
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">15sp</item>
         <item name="lineHeight">18sp</item>
         <item name="android:textFontWeight">600</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.body_medium_15">
+    <style name="TextAppearance.NaverPay.body_medium_15" parent="">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">15sp</item>
         <item name="lineHeight">18sp</item>
         <item name="android:textFontWeight">500</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.body_bold_14">
+    <style name="TextAppearance.NaverPay.body_bold_14" parent="">
         <item name="fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">16sp</item>
         <item name="android:textFontWeight">700</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.detail_regular_14">
+    <style name="TextAppearance.NaverPay.detail_regular_14" parent="">
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">16sp</item>
         <item name="android:textFontWeight">400</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.detail_regular_13">
+    <style name="TextAppearance.NaverPay.detail_regular_13" parent="">
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">13sp</item>
         <item name="lineHeight">16sp</item>
         <item name="android:textFontWeight">400</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.detail_smbold_12">
+    <style name="TextAppearance.NaverPay.detail_smbold_12" parent="">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">14sp</item>
         <item name="android:textFontWeight">600</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.detail_regular_12">
+    <style name="TextAppearance.NaverPay.detail_regular_12" parent="">
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">14sp</item>
         <item name="android:textFontWeight">400</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.detail_smbold_11">
+    <style name="TextAppearance.NaverPay.detail_smbold_11" parent="">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">11sp</item>
         <item name="lineHeight">14sp</item>
         <item name="android:textFontWeight">600</item>
     </style>
 
-    <style name="TextAppearance.NaverPay.detail_regular_10">
+    <style name="TextAppearance.NaverPay.detail_regular_10" parent="">
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">10sp</item>
         <item name="lineHeight">12sp</item>
