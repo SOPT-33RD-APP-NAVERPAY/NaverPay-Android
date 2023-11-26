@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="320dp"
+    android:layout_height="53dp">
+
+    <ImageView
+        android:id="@+id/iv_brand_frame"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/rectangle_bg_white_radius_6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_brand_logo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:importantForAccessibility="no"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="@id/iv_brand_frame"
+        app:layout_constraintTop_toTopOf="@id/iv_brand_frame" />
+
+    <TextView
+        android:id="@+id/tv_brand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="9dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_13"
+        android:textColor="@color/grayscale_gray5"
+        app:layout_constraintStart_toEndOf="@id/iv_brand_frame"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_brand_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
+        android:textColor="@color/bg_white"
+        app:layout_constraintStart_toStartOf="@id/tv_brand_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_brand_name" />
+
+    <ImageView
+        android:id="@+id/iv_brand_arrow"
+        android:layout_width="4dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_home_arrow_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
