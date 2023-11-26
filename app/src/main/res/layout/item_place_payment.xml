@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:gravity="center_horizontal"
-                android:text="도미노 피자"
+                android:text="@string/tv_domino"
                 android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_13"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
