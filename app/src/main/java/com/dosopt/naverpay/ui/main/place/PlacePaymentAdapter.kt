@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.databinding.ItemPlacePaymentBinding
-import com.dosopt.naverpay.domain.place.OnsitepaymentList
+import com.dosopt.naverpay.domain.model.place.OnsitepaymentList
 import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class PlacePaymentAdapter :

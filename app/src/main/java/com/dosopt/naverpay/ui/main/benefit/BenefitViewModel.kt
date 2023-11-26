@@ -3,8 +3,8 @@ package com.dosopt.naverpay.ui.main.benefit
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dosopt.naverpay.R
-import com.dosopt.naverpay.domain.model.benefit.Brand
-import com.dosopt.naverpay.domain.model.benefit.User
+import com.dosopt.naverpay.domain.model.benefit.BenefitBrand
+import com.dosopt.naverpay.domain.model.benefit.BenefitUser
 
 class BenefitViewModel : ViewModel() {
     val cardImages = MutableLiveData(
@@ -25,7 +25,7 @@ class BenefitViewModel : ViewModel() {
     )
 
     val mockUserInfo = MutableLiveData(
-        User(
+        BenefitUser(
             "서재원",
             13000
         )
@@ -33,7 +33,7 @@ class BenefitViewModel : ViewModel() {
 
     val mockPopularBrands = MutableLiveData(
         listOf(
-            Brand(
+            BenefitBrand(
                 id = 1,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",
@@ -41,7 +41,7 @@ class BenefitViewModel : ViewModel() {
                 discount_type = "카드할인",
                 is_brand_like = true
             ),
-            Brand(
+            BenefitBrand(
                 id = 2,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",
@@ -49,7 +49,7 @@ class BenefitViewModel : ViewModel() {
                 discount_type = "카드할인",
                 is_brand_like = true
             ),
-            Brand(
+            BenefitBrand(
                 id = 3,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",
@@ -62,7 +62,7 @@ class BenefitViewModel : ViewModel() {
 
     val mockImmediateBrands = MutableLiveData(
         listOf(
-            Brand(
+            BenefitBrand(
                 id = 1,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",
@@ -70,7 +70,7 @@ class BenefitViewModel : ViewModel() {
                 discount_type = "카드할인",
                 is_brand_like = true
             ),
-            Brand(
+            BenefitBrand(
                 id = 2,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",
@@ -78,7 +78,7 @@ class BenefitViewModel : ViewModel() {
                 discount_type = "카드할인",
                 is_brand_like = true
             ),
-            Brand(
+            BenefitBrand(
                 id = 3,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",
@@ -86,7 +86,7 @@ class BenefitViewModel : ViewModel() {
                 discount_type = "카드할인",
                 is_brand_like = true
             ),
-            Brand(
+            BenefitBrand(
                 id = 3,
                 name = "스타벅스",
                 logo_img_url = "https://github.com/librarywon/Codelab_Compose/assets/52442547/da0ecd21-d35b-4533-8173-afeb81cdc6f3",

@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemBenefitPopularBrandBinding
-import com.dosopt.naverpay.domain.model.benefit.Brand
+import com.dosopt.naverpay.domain.model.benefit.BenefitBrand
 import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class PopularBrandAdapter(
-    private val onLikeClicked: (Brand) -> Unit
-) : ListAdapter<Brand, PopularBrandAdapter.PopularBrandViewHolder>(
-    ItemDiffCallback<Brand>(
+    private val onLikeClicked: (BenefitBrand) -> Unit
+) : ListAdapter<BenefitBrand, PopularBrandAdapter.PopularBrandViewHolder>(
+    ItemDiffCallback<BenefitBrand>(
         onItemsTheSame = { old, new -> old.id == new.id },
         onContentsTheSame = { old, new -> old == new }
     )
@@ -34,38 +34,38 @@ class PopularBrandAdapter(
 
     class PopularBrandViewHolder(
         private val binding: ItemBenefitPopularBrandBinding,
-        private val onLikeClicked: (Brand) -> Unit
+        private val onLikeClicked: (BenefitBrand) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(brand: Brand) {
-            setBrandData(brand)
-            setLikeStatus(brand)
-            setLikeClickListener(brand)
+        fun onBind(benefitBrand: BenefitBrand) {
+            setBrandData(benefitBrand)
+            setLikeStatus(benefitBrand)
+            setLikeClickListener(benefitBrand)
         }
 
-        private fun setBrandData(brand: Brand) {
+        private fun setBrandData(benefitBrand: BenefitBrand) {
             with(binding) {
-                tvBenefitPopularRank.text = brand.id.toString()
-                ivBenefitPopularLogo.load(brand.logo_img_url)
-                tvBenefitPopularName.text = brand.name
-                tvBenefitPopularContent.text = brand.discount_content
-                tvBenefitPopularType.text = brand.discount_type
+                tvBenefitPopularRank.text = benefitBrand.id.toString()
+                ivBenefitPopularLogo.load(benefitBrand.logo_img_url)
+                tvBenefitPopularName.text = benefitBrand.name
+                tvBenefitPopularContent.text = benefitBrand.discount_content
+                tvBenefitPopularType.text = benefitBrand.discount_type
             }
-            if (brand.id == 1L) {
+            if (benefitBrand.id == 1L) {
                 binding.tvBenefitPopularRank.setTextColor(
                     binding.root.context.getColor(R.color.main_green)
                 )
             }
         }
 
-        private fun setLikeStatus(brand: Brand) {
+        private fun setLikeStatus(benefitBrand: BenefitBrand) {
             binding.ibBenefitPopularLike.setBackgroundResource(
-                if (brand.is_brand_like) R.drawable.ic_like_on else R.drawable.ic_like_off
+                if (benefitBrand.is_brand_like) R.drawable.ic_like_on else R.drawable.ic_like_off
             )
         }
 
-        private fun setLikeClickListener(brand: Brand) {
+        private fun setLikeClickListener(benefitBrand: BenefitBrand) {
             binding.ibBenefitPopularLike.setOnClickListener {
-                onLikeClicked(brand)
+                onLikeClicked(benefitBrand)
             }
         }
     }

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentHomeBinding
-import com.dosopt.naverpay.domain.home.CardInfo
+import com.dosopt.naverpay.domain.model.home.CardInfo
 import com.dosopt.naverpay.ui.main.home.adapter.BrandAdapter
 import com.dosopt.naverpay.ui.main.home.adapter.CardAdapter
 import com.dosopt.naverpay.ui.main.home.adapter.EventAdapter

@@ -1,6 +1,6 @@
 package com.dosopt.naverpay.domain.model.benefit
 
-data class Brand(
+data class BenefitBrand(
     val id: Long,
     val name: String,
     val logo_img_url: String,

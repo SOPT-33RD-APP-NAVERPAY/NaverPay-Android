@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentBenefitBinding
-import com.dosopt.naverpay.domain.model.benefit.Brand
+import com.dosopt.naverpay.domain.model.benefit.BenefitBrand
 import com.dosopt.naverpay.ui.main.benefit.adapter.AdmobAdapter
 import com.dosopt.naverpay.ui.main.benefit.adapter.CardMenuAdapter
 import com.dosopt.naverpay.ui.main.benefit.adapter.ImmediateBrandAdapter
@@ -129,8 +129,8 @@ class BenefitFragment : Fragment() {
         }
     }
 
-    private fun onLikeButtonClicked(brand: Brand) {
-        toast("${brand.id}번이 클릭됨")
+    private fun onLikeButtonClicked(benefitBrand: BenefitBrand) {
+        toast("${benefitBrand.id}번이 클릭됨")
     }
 
     override fun onDestroyView() {

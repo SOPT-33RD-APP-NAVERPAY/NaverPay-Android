@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.databinding.ItemPlaceRecommendBinding
-import com.dosopt.naverpay.domain.place.BrandList
+import com.dosopt.naverpay.domain.model.place.BrandList
 import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class PlaceRecommendAdapter :

@@ -1,6 +1,5 @@
 package com.dosopt.naverpay.ui.main.home.adapter
 
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemEventBinding
-import com.dosopt.naverpay.domain.home.EventInfo
+import com.dosopt.naverpay.domain.model.home.EventInfo
 
 class EventAdapter(private val eventList: List<EventInfo>) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {

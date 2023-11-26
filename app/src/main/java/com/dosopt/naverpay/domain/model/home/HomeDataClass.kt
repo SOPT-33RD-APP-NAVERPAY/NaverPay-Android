@@ -1,4 +1,4 @@
-package com.dosopt.naverpay.domain.home
+package com.dosopt.naverpay.domain.model.home
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

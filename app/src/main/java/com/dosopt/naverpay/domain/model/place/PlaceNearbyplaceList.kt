@@ -1,4 +1,4 @@
-package com.dosopt.naverpay.domain.place
+package com.dosopt.naverpay.domain.model.place
 
 data class NearbyplaceList(
     val id: Long,

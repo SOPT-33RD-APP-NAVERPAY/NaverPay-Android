@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemBrandBinding
-import com.dosopt.naverpay.domain.home.Brand
+import com.dosopt.naverpay.domain.model.home.Brand
 
 class BrandAdapter(private val brandList: List<Brand>) : RecyclerView.Adapter<BrandViewHolder>() {
 

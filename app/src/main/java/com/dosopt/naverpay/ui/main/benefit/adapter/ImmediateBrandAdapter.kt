@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.databinding.ItemBenefitImmediateBrandBinding
-import com.dosopt.naverpay.domain.model.benefit.Brand
+import com.dosopt.naverpay.domain.model.benefit.BenefitBrand
 import com.dosopt.naverpay.util.view.ItemDiffCallback
 
-class ImmediateBrandAdapter : ListAdapter<Brand, ImmediateBrandAdapter.ImmediateBrandViewHolder>(
-    ItemDiffCallback<Brand>(
+class ImmediateBrandAdapter : ListAdapter<BenefitBrand, ImmediateBrandAdapter.ImmediateBrandViewHolder>(
+    ItemDiffCallback<BenefitBrand>(
         onItemsTheSame = { old, new -> old.id == new.id },
         onContentsTheSame = { old, new -> old == new }
     )
@@ -34,12 +34,12 @@ class ImmediateBrandAdapter : ListAdapter<Brand, ImmediateBrandAdapter.Immediate
 
     class ImmediateBrandViewHolder(private val binding: ItemBenefitImmediateBrandBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(brand: Brand) {
+        fun onBind(benefitBrand: BenefitBrand) {
             with(binding) {
-                ivBenefitImmediateLogo.load(brand.logo_img_url)
-                tvBenefitImmediateName.text = brand.name
-                tvBenefitImmediateContent.text = brand.discount_content
-                tvBenefitImmediateType.text = brand.discount_type
+                ivBenefitImmediateLogo.load(benefitBrand.logo_img_url)
+                tvBenefitImmediateName.text = benefitBrand.name
+                tvBenefitImmediateContent.text = benefitBrand.discount_content
+                tvBenefitImmediateType.text = benefitBrand.discount_type
             }
         }
     }

@@ -2,10 +2,10 @@ package com.dosopt.naverpay.ui.main.place
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dosopt.naverpay.domain.place.BrandList
-import com.dosopt.naverpay.domain.place.NearbyplaceList
-import com.dosopt.naverpay.domain.place.OnsitepaymentList
-import com.dosopt.naverpay.domain.place.User
+import com.dosopt.naverpay.domain.model.place.BrandList
+import com.dosopt.naverpay.domain.model.place.NearbyplaceList
+import com.dosopt.naverpay.domain.model.place.OnsitepaymentList
+import com.dosopt.naverpay.domain.model.place.User
 
 class PlaceViewModel : ViewModel() {
     val mockUser = MutableLiveData(

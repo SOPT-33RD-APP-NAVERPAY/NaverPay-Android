@@ -10,7 +10,7 @@ import coil.transform.RoundedCornersTransformation
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemCardDeselectedBinding
 import com.dosopt.naverpay.databinding.ItemCardSelectedBinding
-import com.dosopt.naverpay.domain.home.CardInfo
+import com.dosopt.naverpay.domain.model.home.CardInfo
 
 class CardAdapter(
     private val onCardClickListener: (CardInfo) -> Unit,

@@ -1,12 +1,12 @@
 package com.dosopt.naverpay.ui.main.home
 
 import com.dosopt.naverpay.R
-import com.dosopt.naverpay.domain.home.ApiResponse
-import com.dosopt.naverpay.domain.home.Brand
-import com.dosopt.naverpay.domain.home.CardInfo
-import com.dosopt.naverpay.domain.home.EventInfo
-import com.dosopt.naverpay.domain.home.HomeData
-import com.dosopt.naverpay.domain.home.OnsitePayment
+import com.dosopt.naverpay.domain.model.home.ApiResponse
+import com.dosopt.naverpay.domain.model.home.Brand
+import com.dosopt.naverpay.domain.model.home.CardInfo
+import com.dosopt.naverpay.domain.model.home.EventInfo
+import com.dosopt.naverpay.domain.model.home.HomeData
+import com.dosopt.naverpay.domain.model.home.OnsitePayment
 
 class HomeViewModel {
     val mockApiResponse = ApiResponse(
