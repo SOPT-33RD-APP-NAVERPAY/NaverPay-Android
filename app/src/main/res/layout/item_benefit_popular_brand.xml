@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/tv_benefit_popular_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
+        android:textColor="@color/sub_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <ImageView
+        android:id="@+id/iv_benefit_popular_logo"
+        android:layout_width="54dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_benefit_popular_rank"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_logo" />
+
+    <TextView
+        android:id="@+id/tv_benefit_popular_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.body_bold_14"
+        app:layout_constraintStart_toEndOf="@id/iv_benefit_popular_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CU" />
+
+    <TextView
+        android:id="@+id/tv_benefit_popular_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_13"
+        android:textColor="@color/sub_black"
+        app:layout_constraintStart_toStartOf="@id/tv_benefit_popular_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_name"
+        tools:text="네플멤 회원은 CU 최대" />
+
+    <TextView
+        android:id="@+id/tv_benefit_popular_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.detail_smbold_12"
+        android:textColor="@color/main_green"
+        app:layout_constraintStart_toStartOf="@id/tv_benefit_popular_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_content"
+        tools:text="10%" />
+
+    <ImageButton
+        android:id="@+id/ib_benefit_popular_like"
+        android:layout_width="28dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/ic_like_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

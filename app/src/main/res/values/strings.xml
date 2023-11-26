@@ -4,7 +4,16 @@
     <!-- main -->
 
     <!-- benefit -->
-
+    <string name="benefit_appbar_title">혜택</string>
+    <string name="benefit_name">%s님의 포인트</string>
+    <string name="benefit_user_point">%s원</string>
+    <string name="benefit_popular_title">실시간 인기 현장결제 혜택!</string>
+    <string name="benefit_popular_description">나의 최근 소비내역을 기반으로 추천해드려요.</string>
+    <string name="benefit_find_store_near_me">내 주변 매장 찾기</string>
+    <string name="benefit_point_menu_title">손 쉽게 모으는 포인트!</string>
+    <string name="benefit_immediate_brand_title">즉시적립 혜택 전체보기</string>
+    <string name="benefit_admob_point_qna"><![CDATA[광고&포인트 제휴문의]]></string>
+    <string name="benefit_event_qna">이벤트 고객문의</string>
     <!-- home -->
 
     <!-- place -->
