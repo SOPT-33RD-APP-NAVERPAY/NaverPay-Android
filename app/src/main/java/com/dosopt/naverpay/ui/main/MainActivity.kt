@@ -7,6 +7,7 @@ import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ActivityMainBinding
 import com.dosopt.naverpay.ui.main.benefit.BenefitFragment
 import com.dosopt.naverpay.ui.main.home.HomeFragment
+import com.dosopt.naverpay.ui.main.point.PointFragment
 import com.dosopt.naverpay.ui.main.place.PlaceFragment
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun getFragmentForMenuItem(itemId: Int): Fragment? {
         return when (itemId) {
             R.id.menu_main_home -> HomeFragment()
-            R.id.menu_main_benefit -> BenefitFragment()
+            R.id.menu_main_benefit -> PointFragment()
             else -> null
         }
     }
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDefaultFragment() {
-        replaceFragment(HomeFragment())
+        replaceFragment(PointFragment())
     }
 
     private fun setupDefaultBottomNavigation() {

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_point_reward_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.detail_smbold_11"
+        android:textColor="@color/grayscale_gray5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="11.20" />
+
+    <TextView
+        android:id="@+id/tv_point_reward_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.body_bold_14"
+        android:textColor="@color/sub_black"
+        app:layout_constraintStart_toEndOf="@id/tv_point_reward_date"
+        app:layout_constraintTop_toTopOf="@id/tv_point_reward_date"
+        tools:text="무신사" />
+
+    <TextView
+        android:id="@+id/tv_point_reward_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="17dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.detail_smbold_12"
+        android:textColor="@color/grayscale_gray5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_point_reward_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_point_reward_name"
+        tools:text="12:00" />
+
+    <View
+        android:id="@+id/v_point_reward_divider"
+        android:layout_width="1dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="3dp"
+        android:background="@color/grayscale_gray3"
+        app:layout_constraintBottom_toBottomOf="@id/tv_point_reward_time"
+        app:layout_constraintStart_toEndOf="@id/tv_point_reward_time"
+        app:layout_constraintTop_toTopOf="@id/tv_point_reward_time" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="7dp"
+        android:src="@drawable/ic_point_buy"
+        app:layout_constraintBottom_toBottomOf="@id/tv_point_reward_time"
+        app:layout_constraintStart_toEndOf="@id/v_point_reward_divider"
+        app:layout_constraintTop_toTopOf="@id/tv_point_reward_time" />
+
+    <TextView
+        android:id="@+id/tv_point_reward_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:textAppearance="@style/TextAppearance.NaverPay.subtitle_bold_16"
+        android:textColor="@color/main_green"
+        app:layout_constraintBottom_toBottomOf="@id/tv_point_reward_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_point_reward_date"
+        tools:text="+3,100원" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
