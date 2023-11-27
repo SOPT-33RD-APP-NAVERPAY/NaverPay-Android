@@ -1,42 +1,45 @@
 package com.dosopt.naverpay.network.dto
 
+
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-class HomeResponse (
-    @SerialName("user_point")
-    val userPoint: Int = 0,
-    @SerialName("onsite_payment")
-    val onsitePayment: OnsitePaymentDto,
+@Serializable
+data class HomeResponse(
     @SerialName("brand_list")
-    val brandList: List<BrandListDto> = listOf()
-){
+    val brandList: List<BrandListDto> = listOf(),
+    @SerialName("onsite_payment")
+    val onsitePayment: OnsitePayment = OnsitePayment(),
+    @SerialName("user_point")
+    val userPoint: Int = 0
+) {
     @Serializable
     data class BrandListDto(
-        @SerialName("id")
-        val id: Long = 0,
-        @SerialName("name")
-        val name: String = "",
-        @SerialName("place")
-        val place: String = "",
-        @SerialName("logo_img_url")
-        val logoImgUrl: String = "",
         @SerialName("discount_content")
         val discountContent: String = "",
-    )
-    @Serializable
-    data class OnsitePaymentDto(
         @SerialName("id")
         val id: Long = 0,
+        @SerialName("logo_img_url")
+        val logoImgUrl: String = "",
         @SerialName("name")
         val name: String = "",
         @SerialName("place")
-        val place: String = "",
-        @SerialName("logo_img_url")
-        val logoImgUrl: String = "",
+        val place: String = ""
+    )
+
+    @Serializable
+    data class OnsitePayment(
         @SerialName("amount")
         val amount: Int = 0,
+        @SerialName("id")
+        val id: Long = 0,
+        @SerialName("logo_img_url")
+        val logoImgUrl: String = "",
+        @SerialName("name")
+        val name: String = "",
         @SerialName("payment_date")
-        val paymentData: String = "",
+        val paymentDate: String = "",
+        @SerialName("place")
+        val place: String = ""
     )
 }

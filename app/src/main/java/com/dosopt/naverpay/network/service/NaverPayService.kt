@@ -2,10 +2,10 @@ package com.dosopt.naverpay.network.service
 
 import com.dosopt.naverpay.network.dto.BaseResponse
 import com.dosopt.naverpay.network.dto.BenefitResponse
-import com.dosopt.naverpay.network.dto.HomeResponse
 import com.dosopt.naverpay.network.dto.LikeResponse
 import com.dosopt.naverpay.network.dto.PlaceResponse
 import com.dosopt.naverpay.network.dto.PointResponse
+import com.dosopt.naverpay.network.dto.HomeResponse
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Headers
