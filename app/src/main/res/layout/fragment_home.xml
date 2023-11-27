@@ -234,8 +234,6 @@
                 android:background="@drawable/gradient_linear_gd"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="8dp"
                 app:layout_constraintStart_toStartOf="@id/cl_card_background"
                 app:layout_constraintTop_toTopOf="@id/cl_card_background" />
 
