@@ -11,10 +11,16 @@ import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemCardDeselectedBinding
 import com.dosopt.naverpay.databinding.ItemCardSelectedBinding
 import com.dosopt.naverpay.domain.model.home.CardInfo
+import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class CardAdapter(
     private val onCardClickListener: (CardInfo) -> Unit,
-) : ListAdapter<CardInfo, RecyclerView.ViewHolder>(CardDiffCallback()) {
+) : ListAdapter<CardInfo, RecyclerView.ViewHolder>(
+    ItemDiffCallback<CardInfo>(
+        onItemsTheSame = { oldItem, newItem -> oldItem.id == newItem.id },
+        onContentsTheSame = { oldItem, newItem -> oldItem == newItem }
+    )
+) {
 
     private var selectedCard: CardInfo? = null
 
@@ -97,15 +103,5 @@ class DeselectedCardViewHolder(
             transformations(RoundedCornersTransformation(radius = 8f))
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
-    }
-}
-
-class CardDiffCallback : DiffUtil.ItemCallback<CardInfo>() {
-    override fun areItemsTheSame(oldItem: CardInfo, newItem: CardInfo): Boolean {
-        return oldItem.id == newItem.id
-    }
-
-    override fun areContentsTheSame(oldItem: CardInfo, newItem: CardInfo): Boolean {
-        return oldItem == newItem
     }
 }

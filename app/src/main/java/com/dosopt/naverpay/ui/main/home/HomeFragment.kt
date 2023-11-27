@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
     private lateinit var brandAdapter: BrandAdapter
     private val selectedCardList = mutableListOf<CardInfo>()
     private val defaultSelectedCardId = 1
-    private val viewModel = HomeViewModel()
+    private val viewModel by viewModels<HomeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +59,7 @@ class HomeFragment : Fragment() {
         setupTitleColor()
 
         moveToRecommend()
+        viewModel.getHomeInfo()
     }
 
     private fun setupTabs() {
@@ -103,14 +105,14 @@ class HomeFragment : Fragment() {
             )
             tvRecommendTitle.text = spannableRecommendTitle
 
-            val spannableEvent = SpannableString(tvEvent.text)
-            spannableEvent.setSpan(
+            val spannableEventTitle = SpannableString(tvEventTitle.text)
+            spannableEventTitle.setSpan(
                 ForegroundColorSpan(Color.parseColor("#FFFFFF")),
                 0,
                 3,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
-            tvEvent.text = spannableEvent
+            tvEventTitle.text = spannableEventTitle
         }
     }
 
@@ -125,29 +127,30 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecentPayment() {
-        with(binding) {
-            val tvCardBalance = tvCardBalance
-            tvCardBalance.text = formatBalance(viewModel.mockApiResponse.data.userPoint)
+        viewModel.userDto.observe(this) { userDto ->
+            binding.tvCardBalance.text = formatBalance(userDto.userPoint)
+        }
+        viewModel.onsitePayment.observe(this) { onsitePayment ->
+            with(binding) {
+                ivRecentPlace.load(onsitePayment.logoImgUrl) {
+                    crossfade(true)
+                    error(R.drawable.img_recent_blank)
+                }
 
-            ivRecentPlace.load(viewModel.mockApiResponse.data.onsitePayment.logoImgUrl.toInt()) {
-                crossfade(true)
-                error(R.drawable.img_recent_blank)
-            }
+                tvRecentPrice.text =
+                    getString(R.string.tv_recent_price, onsitePayment.amount)
 
-            val formatter = DateTimeFormatter.ofPattern("yyyy. MM. dd a hh:mm:ss")
-            val parsedDate = LocalDateTime.parse(
-                viewModel.mockApiResponse.data.onsitePayment.paymentDate,
-                formatter
-            )
-            val formattedDate = parsedDate.format(DateTimeFormatter.ofPattern("MM.dd"))
-
-            tvRecentPlace.text =
-                "${viewModel.mockApiResponse.data.onsitePayment.name} ${viewModel.mockApiResponse.data.onsitePayment.place}"
-            tvRecentPrice.text =
-                "-${formatBalance(viewModel.mockApiResponse.data.onsitePayment.amount)} " + getString(
-                    R.string.tv_recent_price_unit
+                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+                val parsedDate = LocalDateTime.parse(
+                    onsitePayment.paymentDate,
+                    formatter
                 )
-            tvRecentDate.text = formattedDate
+                val formattedDate = parsedDate.format(DateTimeFormatter.ofPattern("MM.dd"))
+                tvRecentDate.text = formattedDate
+
+                tvRecentPlace.text =
+                    getString(R.string.tv_recent_place, onsitePayment.name, onsitePayment.place)
+            }
         }
     }
 
@@ -195,11 +198,12 @@ class HomeFragment : Fragment() {
         brandAdapter = BrandAdapter(viewModel.mockApiResponse.data.brandList)
 
         with(binding.rvRecommend) {
-            layoutManager = GridLayoutManager(requireContext(), 1) // or your desired span count
+            layoutManager = GridLayoutManager(requireContext(), 1)
             addItemDecoration(BrandItemDecoration(requireContext(), 1, spacingInPixels))
             adapter = brandAdapter
         }
     }
+
     private fun moveToRecommend() {
         binding.rlRecommendAllview.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()

@@ -1,5 +1,10 @@
 package com.dosopt.naverpay.ui.main.home
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.domain.model.home.ApiResponse
 import com.dosopt.naverpay.domain.model.home.Brand
@@ -7,8 +12,35 @@ import com.dosopt.naverpay.domain.model.home.CardInfo
 import com.dosopt.naverpay.domain.model.home.EventInfo
 import com.dosopt.naverpay.domain.model.home.HomeData
 import com.dosopt.naverpay.domain.model.home.OnsitePayment
+import com.dosopt.naverpay.network.ServicePool
+import com.dosopt.naverpay.network.dto.HomeResponse
+import kotlinx.coroutines.launch
 
-class HomeViewModel {
+class HomeViewModel : ViewModel() {
+
+    private val _userDto = MutableLiveData<HomeResponse>()
+    val userDto: LiveData<HomeResponse> get() = _userDto
+
+    private val _brandListDto = MutableLiveData<List<HomeResponse.BrandListDto>>()
+    val brandListDto: LiveData<List<HomeResponse.BrandListDto>> get() = _brandListDto
+
+    private val _onsitePayment = MutableLiveData<HomeResponse.OnsitePayment>()
+    val onsitePayment: LiveData<HomeResponse.OnsitePayment> get() = _onsitePayment
+
+    fun getHomeInfo() {
+        viewModelScope.launch {
+            runCatching {
+                ServicePool.naverPayService.homeLogin()
+            }.onSuccess { response ->
+                _userDto.value = response.data ?: HomeResponse()
+                _brandListDto.value = response.data?.brandList ?: listOf()
+                _onsitePayment.value = response.data?.onsitePayment ?: HomeResponse.OnsitePayment()
+            }.onFailure {
+                Log.e("HomeNetworkTest", "error:$it")
+            }
+        }
+    }
+
     val mockApiResponse = ApiResponse(
         status = 200,
         message = "홈화면 조회에 성공했습니다.",
