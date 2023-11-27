@@ -82,7 +82,8 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val defaultSelectedCard = viewModel.cardList.find { it.id == viewModel.defaultSelectedCardId }
+        val defaultSelectedCard =
+            viewModel.cardList.find { it.id == viewModel.defaultSelectedCardId }
         defaultSelectedCard?.let { cardAdapter.setSelectedCard(it) }
 
         with(binding.rvCardList) {

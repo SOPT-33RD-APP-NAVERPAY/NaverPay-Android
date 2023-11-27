@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.R
-import com.dosopt.naverpay.databinding.ItemEventBinding
+import com.dosopt.naverpay.databinding.ItemHomeEventBinding
 import com.dosopt.naverpay.domain.model.home.EventInfo
 
 class EventAdapter(private val eventList: List<EventInfo>) :
@@ -14,7 +14,7 @@ class EventAdapter(private val eventList: List<EventInfo>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemEventBinding.inflate(inflater, parent, false)
+        val binding = ItemHomeEventBinding.inflate(inflater, parent, false)
         return EventViewHolder(binding)
     }
 
@@ -26,7 +26,7 @@ class EventAdapter(private val eventList: List<EventInfo>) :
         return eventList.size
     }
 
-    inner class EventViewHolder(private val binding: ItemEventBinding) :
+    inner class EventViewHolder(private val binding: ItemHomeEventBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(eventInfo: EventInfo) {

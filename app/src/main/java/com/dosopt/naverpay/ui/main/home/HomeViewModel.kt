@@ -32,7 +32,8 @@ class HomeViewModel : ViewModel() {
             }.onSuccess { response ->
                 _userDto.value = response.data ?: HomeResponse()
                 _brandListDto.value = response.data?.brandList ?: listOf()
-                _onsitePayment.value = response.data?.onsitePayment ?: HomeResponse.OnsitePaymentDto()
+                _onsitePayment.value =
+                    response.data?.onsitePayment ?: HomeResponse.OnsitePaymentDto()
             }.onFailure {
                 Log.e("HomeNetworkTest", "error:$it")
             }
