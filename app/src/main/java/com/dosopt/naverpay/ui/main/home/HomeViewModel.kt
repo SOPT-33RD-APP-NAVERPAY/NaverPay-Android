@@ -6,12 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dosopt.naverpay.R
-import com.dosopt.naverpay.domain.model.home.ApiResponse
-import com.dosopt.naverpay.domain.model.home.Brand
 import com.dosopt.naverpay.domain.model.home.CardInfo
 import com.dosopt.naverpay.domain.model.home.EventInfo
-import com.dosopt.naverpay.domain.model.home.HomeData
-import com.dosopt.naverpay.domain.model.home.OnsitePayment
 import com.dosopt.naverpay.network.ServicePool
 import com.dosopt.naverpay.network.dto.HomeResponse
 import kotlinx.coroutines.launch
@@ -24,8 +20,8 @@ class HomeViewModel : ViewModel() {
     private val _brandListDto = MutableLiveData<List<HomeResponse.BrandListDto>>()
     val brandListDto: LiveData<List<HomeResponse.BrandListDto>> get() = _brandListDto
 
-    private val _onsitePayment = MutableLiveData<HomeResponse.OnsitePayment>()
-    val onsitePayment: LiveData<HomeResponse.OnsitePayment> get() = _onsitePayment
+    private val _onsitePayment = MutableLiveData<HomeResponse.OnsitePaymentDto>()
+    val onsitePayment: LiveData<HomeResponse.OnsitePaymentDto> get() = _onsitePayment
 
     fun getHomeInfo() {
         viewModelScope.launch {
@@ -34,58 +30,12 @@ class HomeViewModel : ViewModel() {
             }.onSuccess { response ->
                 _userDto.value = response.data ?: HomeResponse()
                 _brandListDto.value = response.data?.brandList ?: listOf()
-                _onsitePayment.value = response.data?.onsitePayment ?: HomeResponse.OnsitePayment()
+                _onsitePayment.value = response.data?.onsitePayment ?: HomeResponse.OnsitePaymentDto()
             }.onFailure {
                 Log.e("HomeNetworkTest", "error:$it")
             }
         }
     }
-
-    val mockApiResponse = ApiResponse(
-        status = 200,
-        message = "홈화면 조회에 성공했습니다.",
-        data = HomeData(
-            userPoint = 11500,
-            onsitePayment = OnsitePayment(
-                id = 1,
-                name = "GS25",
-                place = "건대점",
-                logoImgUrl = R.drawable.img_logo_gs25.toString(),
-                amount = 25000,
-                paymentDate = "2023. 11. 16 오후 12:21:21"
-            ),
-            brandList = listOf(
-                Brand(
-                    id = 1,
-                    name = "CU",
-                    place = "건대점",
-                    logoImgUrl = R.drawable.img_brand_1,
-                    discountContent = "네플멤 회원은 CU 최대"
-                ),
-                Brand(
-                    id = 2,
-                    name = "파리바게뜨",
-                    place = "건대점",
-                    logoImgUrl = R.drawable.img_brand_2,
-                    discountContent = "현장결제 및 포인트 더블혜택"
-                ),
-                Brand(
-                    id = 3,
-                    name = "신라호텔",
-                    place = " ",
-                    logoImgUrl = R.drawable.img_brand_3,
-                    discountContent = "30만원 이상 결제시 1만원"
-                ),
-                Brand(
-                    id = 4,
-                    name = "도미노피자",
-                    place = "건대점",
-                    logoImgUrl = R.drawable.img_brand_4,
-                    discountContent = "QR결제시 최대 2천원 할인"
-                )
-            )
-        )
-    )
 
     val cardList = listOf(
         CardInfo(1, R.drawable.img_card_1),

@@ -19,33 +19,9 @@ data class EventInfo(
 )
 
 @Serializable
-data class ApiResponse(
-    @SerialName("status")
-    val status: Int,
-
-    @SerialName("message")
-    val message: String,
-
-    @SerialName("data")
-    val data: HomeData,
-)
-
-@Serializable
-data class HomeData(
-    @SerialName("user_point")
-    val userPoint: Int,
-
-    @SerialName("onsite_payment")
-    val onsitePayment: OnsitePayment,
-
-    @SerialName("brand_list")
-    val brandList: List<Brand>,
-)
-
-@Serializable
-data class OnsitePayment(
+data class BrandInfo(
     @SerialName("id")
-    val id: Int,
+    val id: Long,
 
     @SerialName("name")
     val name: String,
@@ -55,27 +31,6 @@ data class OnsitePayment(
 
     @SerialName("logo_img_url")
     val logoImgUrl: String,
-
-    @SerialName("amount")
-    val amount: Int,
-
-    @SerialName("payment_date")
-    val paymentDate: String,
-)
-
-@Serializable
-data class Brand(
-    @SerialName("id")
-    val id: Int,
-
-    @SerialName("name")
-    val name: String,
-
-    @SerialName("place")
-    val place: String,
-
-    @SerialName("logo_img_url")
-    val logoImgUrl: Int,
 
     @SerialName("discount_content")
     val discountContent: String,

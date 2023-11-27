@@ -48,6 +48,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getHomeInfo()
 
         setupTabs()
         setupRecentPayment()
@@ -59,7 +60,6 @@ class HomeFragment : Fragment() {
         setupTitleColor()
 
         moveToRecommend()
-        viewModel.getHomeInfo()
     }
 
     private fun setupTabs() {
@@ -195,12 +195,16 @@ class HomeFragment : Fragment() {
 
     private fun setupBrandRecyclerView() {
         val spacingInPixels = (16 * resources.displayMetrics.density).toInt()
-        brandAdapter = BrandAdapter(viewModel.mockApiResponse.data.brandList)
+        brandAdapter = BrandAdapter()
 
         with(binding.rvRecommend) {
             layoutManager = GridLayoutManager(requireContext(), 1)
             addItemDecoration(BrandItemDecoration(requireContext(), 1, spacingInPixels))
             adapter = brandAdapter
+        }
+
+        viewModel.brandListDto.observe(viewLifecycleOwner) { brandListDto ->
+            brandAdapter.submitList(brandListDto)
         }
     }
 
