@@ -13,6 +13,8 @@ import com.dosopt.naverpay.network.dto.HomeResponse
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
+    val selectedCardList = mutableListOf<CardInfo>()
+    val defaultSelectedCardId = 1
 
     private val _userDto = MutableLiveData<HomeResponse>()
     val userDto: LiveData<HomeResponse> get() = _userDto

@@ -34,8 +34,6 @@ class HomeFragment : Fragment() {
     private lateinit var cardAdapter: CardAdapter
     private lateinit var eventAdapter: EventAdapter
     private lateinit var brandAdapter: BrandAdapter
-    private val selectedCardList = mutableListOf<CardInfo>()
-    private val defaultSelectedCardId = 1
     private val viewModel by viewModels<HomeViewModel>()
 
     override fun onCreateView(
@@ -51,6 +49,7 @@ class HomeFragment : Fragment() {
         viewModel.getHomeInfo()
 
         setupTabs()
+        setupUserInfo()
         setupRecentPayment()
 
         setupCardRecyclerView()
@@ -83,7 +82,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val defaultSelectedCard = viewModel.cardList.find { it.id == defaultSelectedCardId }
+        val defaultSelectedCard = viewModel.cardList.find { it.id == viewModel.defaultSelectedCardId }
         defaultSelectedCard?.let { cardAdapter.setSelectedCard(it) }
 
         with(binding.rvCardList) {
@@ -126,32 +125,35 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupRecentPayment() {
+    private fun setupUserInfo() {
         viewModel.userDto.observe(this) { userDto ->
             binding.tvCardBalance.text = formatBalance(userDto.userPoint)
         }
+    }
+
+    private fun setupRecentPayment() {
         viewModel.onsitePayment.observe(this) { onsitePayment ->
             with(binding) {
                 ivRecentPlace.load(onsitePayment.logoImgUrl) {
                     crossfade(true)
-                    error(R.drawable.img_recent_blank)
+                    error(R.drawable.rectangle_bg_white_radius_6)
                 }
 
-                tvRecentPrice.text =
-                    getString(R.string.tv_recent_price, onsitePayment.amount)
+                tvRecentPrice.text = getString(R.string.tv_recent_price, onsitePayment.amount)
 
-                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
-                val parsedDate = LocalDateTime.parse(
-                    onsitePayment.paymentDate,
-                    formatter
-                )
-                val formattedDate = parsedDate.format(DateTimeFormatter.ofPattern("MM.dd"))
+                val formattedDate = formatPaymentDate(onsitePayment.paymentDate)
                 tvRecentDate.text = formattedDate
 
                 tvRecentPlace.text =
                     getString(R.string.tv_recent_place, onsitePayment.name, onsitePayment.place)
             }
         }
+    }
+
+    private fun formatPaymentDate(paymentDate: String): String {
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+        val parsedDate = LocalDateTime.parse(paymentDate, formatter)
+        return parsedDate.format(DateTimeFormatter.ofPattern("MM.dd"))
     }
 
     private fun selectTab(textView: TextView, bottomView: View) {
@@ -175,10 +177,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleCardSelection(selectedCard: CardInfo) {
-        if (selectedCardList.contains(selectedCard)) {
-            selectedCardList.remove(selectedCard)
+        if (viewModel.selectedCardList.contains(selectedCard)) {
+            viewModel.selectedCardList.remove(selectedCard)
         } else {
-            selectedCardList.add(selectedCard)
+            viewModel.selectedCardList.add(selectedCard)
         }
 
         cardAdapter.setSelectedCard(selectedCard)

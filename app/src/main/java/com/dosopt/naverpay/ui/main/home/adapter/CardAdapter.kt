@@ -84,7 +84,7 @@ class SelectedCardViewHolder(
     fun onBind(cardInfo: CardInfo) {
         binding.ivCardSelected.load(cardInfo.img) {
             crossfade(true)
-            error(R.drawable.img_card_blank)
+            error(R.drawable.rectangle_bg_white_radius_6)
             transformations(RoundedCornersTransformation(radius = 8f))
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
@@ -99,7 +99,7 @@ class DeselectedCardViewHolder(
     fun onBind(cardInfo: CardInfo) {
         binding.ivCardDeselected.load(cardInfo.img) {
             crossfade(true)
-            error(R.drawable.img_card_blank)
+            error(R.drawable.rectangle_bg_white_radius_6)
             transformations(RoundedCornersTransformation(radius = 8f))
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
