@@ -9,9 +9,13 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentPlaceBinding
+import com.dosopt.naverpay.domain.model.place.BrandList
+import com.dosopt.naverpay.domain.model.place.NearbyplaceList
+import com.dosopt.naverpay.network.dto.PlaceResponse
 import com.dosopt.naverpay.ui.main.benefit.BenefitFragment
 import com.dosopt.naverpay.ui.main.home.HomeFragment
 
@@ -33,27 +37,42 @@ class PlaceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setDiv()
-        setupAdapter()
         setupTabs()
         clickXbtn()
         clickMapbtn()
+
+        with(viewModel) {
+            getPlacePayment()
+
+            nearbyplaceList.observe(viewLifecycleOwner, Observer { data ->
+                setupNearbyAdapter(data)
+            })
+            brandList.observe(viewLifecycleOwner, Observer { data ->
+                setupRecommendAdapter(data)
+            })
+            onsitepaymentList.observe(viewLifecycleOwner, Observer { data ->
+                setupPaymentAdapter(data)
+            })
+
+            userName.observe(viewLifecycleOwner, Observer { data -> data })
+        }
     }
 
     //어댑터 붙이기
-    private fun setupAdapter() {
+    private fun setupNearbyAdapter(nearbyplaceList: List<PlaceResponse.NearbyplaceListDto>?) {
         val placeNearbyAdapter = PlaceNearbyAdapter()
+
+        binding.rvPlace.adapter = placeNearbyAdapter
+    }
+
+    private fun setupRecommendAdapter(brandList: List<PlaceResponse.BrandListDto>?) {
         val placeRecommendAdapter = PlaceRecommendAdapter()
+        binding.rvPlaceRecommend.adapter = placeRecommendAdapter
+    }
+
+    private fun setupPaymentAdapter(OnsitepaymentList: List<PlaceResponse.OnsitepaymentListDto>?) {
         val placePaymentAdapter = PlacePaymentAdapter()
-
-        with(binding) {
-            rvPlace.adapter = placeNearbyAdapter
-            rvPlaceRecommend.adapter = placeRecommendAdapter
-            rvPlacePayment.adapter = placePaymentAdapter
-        }
-
-        placeNearbyAdapter.submitList(viewModel.mockNearbyplaceList.value.orEmpty())
-        placeRecommendAdapter.submitList(viewModel.mockBrandList.value.orEmpty())
-        placePaymentAdapter.submitList(viewModel.mockOnsitepaymentList.value.orEmpty())
+        binding.rvPlacePayment.adapter = placePaymentAdapter
     }
 
     //탭 선택시
