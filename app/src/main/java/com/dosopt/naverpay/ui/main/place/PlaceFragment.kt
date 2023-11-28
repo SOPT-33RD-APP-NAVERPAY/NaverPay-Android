@@ -13,8 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.FragmentPlaceBinding
-import com.dosopt.naverpay.domain.model.place.BrandList
-import com.dosopt.naverpay.domain.model.place.NearbyplaceList
 import com.dosopt.naverpay.network.dto.PlaceResponse
 import com.dosopt.naverpay.ui.main.benefit.BenefitFragment
 import com.dosopt.naverpay.ui.main.home.HomeFragment
@@ -23,7 +21,8 @@ class PlaceFragment : Fragment() {
     private var _binding: FragmentPlaceBinding? = null
     private val binding: FragmentPlaceBinding
         get() = requireNotNull(_binding) { "_binding is  null" }
-    private val viewModel = PlaceViewModel()
+
+    private val viewModel by viewModels<PlaceViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +53,12 @@ class PlaceFragment : Fragment() {
                 setupPaymentAdapter(data)
             })
 
-            userName.observe(viewLifecycleOwner, Observer { data -> data })
+            userName.observe(viewLifecycleOwner, Observer { data ->
+                val nearMessage = getString(R.string.tv_near_place, data)
+                val recomMessage = getString(R.string.tv_place_recom, data)
+                binding.tvPlaceNear.text = nearMessage
+                binding.tvPlaceRecom.text = recomMessage
+            })
         }
     }
 
@@ -63,16 +67,19 @@ class PlaceFragment : Fragment() {
         val placeNearbyAdapter = PlaceNearbyAdapter()
 
         binding.rvPlace.adapter = placeNearbyAdapter
+        placeNearbyAdapter.submitList(nearbyplaceList)
     }
 
     private fun setupRecommendAdapter(brandList: List<PlaceResponse.BrandListDto>?) {
         val placeRecommendAdapter = PlaceRecommendAdapter()
         binding.rvPlaceRecommend.adapter = placeRecommendAdapter
+        placeRecommendAdapter.submitList(brandList)
     }
 
-    private fun setupPaymentAdapter(OnsitepaymentList: List<PlaceResponse.OnsitepaymentListDto>?) {
+    private fun setupPaymentAdapter(onsitepaymentList: List<PlaceResponse.OnsitepaymentListDto>?) {
         val placePaymentAdapter = PlacePaymentAdapter()
         binding.rvPlacePayment.adapter = placePaymentAdapter
+        placePaymentAdapter.submitList(onsitepaymentList)
     }
 
     //탭 선택시
