@@ -23,7 +23,7 @@
         android:layout_marginTop="20dp"
         android:importantForAccessibility="no"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_card_blank"
+        android:src="@drawable/rectangle_bg_white_radius_6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

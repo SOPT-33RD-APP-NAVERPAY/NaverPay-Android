@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDefaultFragment() {
-        replaceFragment(PointFragment())
+        replaceFragment(HomeFragment())
     }
 
     private fun setupDefaultBottomNavigation() {

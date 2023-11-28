@@ -9,7 +9,7 @@ data class HomeResponse(
     @SerialName("brand_list")
     val brandList: List<BrandListDto> = listOf(),
     @SerialName("onsite_payment")
-    val onsitePayment: OnsitePayment = OnsitePayment(),
+    val onsitePayment: OnsitePaymentDto = OnsitePaymentDto(),
     @SerialName("user_point")
     val userPoint: Int = 0
 ) {
@@ -28,7 +28,7 @@ data class HomeResponse(
     )
 
     @Serializable
-    data class OnsitePayment(
+    data class OnsitePaymentDto(
         @SerialName("amount")
         val amount: Int = 0,
         @SerialName("id")
