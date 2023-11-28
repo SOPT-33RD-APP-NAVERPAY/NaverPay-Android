@@ -5,12 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.dosopt.naverpay.R
 import com.dosopt.naverpay.databinding.ItemPlaceNearbyBinding
-import com.dosopt.naverpay.domain.model.place.NearbyplaceList
 import com.dosopt.naverpay.network.dto.PlaceResponse
 import com.dosopt.naverpay.util.view.ItemDiffCallback
-import java.util.concurrent.ThreadLocalRandom.current
 
 class PlaceNearbyAdapter :
     ListAdapter<PlaceResponse.NearbyplaceListDto, PlaceNearbyAdapter.PlaceNearbyViewHolder>(

@@ -65,7 +65,6 @@ class PlaceFragment : Fragment() {
     //어댑터 붙이기
     private fun setupNearbyAdapter(nearbyplaceList: List<PlaceResponse.NearbyplaceListDto>?) {
         val placeNearbyAdapter = PlaceNearbyAdapter()
-
         binding.rvPlace.adapter = placeNearbyAdapter
         placeNearbyAdapter.submitList(nearbyplaceList)
     }
