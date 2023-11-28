@@ -14,8 +14,6 @@ class PlaceNearbyAdapter :
         diffCallback
     ) {
 
-    private var nearbyplaceList: List<PlaceResponse.NearbyplaceListDto> = listOf()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceNearbyViewHolder {
         val binding =
             ItemPlaceNearbyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,8 +21,7 @@ class PlaceNearbyAdapter :
     }
 
     override fun onBindViewHolder(holder: PlaceNearbyViewHolder, position: Int) {
-        val place = nearbyplaceList[position]
-        holder.onBind(place)
+        holder.onBind(currentList[position])
     }
 
     class PlaceNearbyViewHolder(private val binding: ItemPlaceNearbyBinding) :
@@ -32,7 +29,7 @@ class PlaceNearbyAdapter :
         fun onBind(data: PlaceResponse.NearbyplaceListDto) {
             binding.ivCu.load(data.logoImgUrl)
             binding.tvCu.text = data.name
-            binding.tvDisCu.text = data.distance.toString()
+            binding.tvDisCu.text = data.distanceValue
         }
     }
 

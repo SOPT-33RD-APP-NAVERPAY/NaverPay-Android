@@ -14,8 +14,6 @@ class PlaceRecommendAdapter :
         diffCallback
     ) {
 
-    private var brandList: List<PlaceResponse.BrandListDto> = listOf()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceRecommendViewHolder {
         val binding =
             ItemPlaceRecommendBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,8 +21,7 @@ class PlaceRecommendAdapter :
     }
 
     override fun onBindViewHolder(holder: PlaceRecommendViewHolder, position: Int) {
-        val place = brandList[position]
-        holder.onBind(place)
+        holder.onBind(currentList[position])
     }
 
     class PlaceRecommendViewHolder(private val binding: ItemPlaceRecommendBinding) :

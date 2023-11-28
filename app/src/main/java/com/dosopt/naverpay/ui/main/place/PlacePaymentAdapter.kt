@@ -14,7 +14,6 @@ class PlacePaymentAdapter :
         diffCallback
     ) {
 
-    private var onsitepaymentList: List<PlaceResponse.OnsitepaymentListDto> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlacePaymentViewHolder {
         val binding =
@@ -23,8 +22,8 @@ class PlacePaymentAdapter :
     }
 
     override fun onBindViewHolder(holder: PlacePaymentViewHolder, position: Int) {
-        val place = onsitepaymentList[position]
-        holder.onBind(place)
+
+        holder.onBind(currentList[position])
     }
 
     class PlacePaymentViewHolder(private val binding: ItemPlacePaymentBinding) :
