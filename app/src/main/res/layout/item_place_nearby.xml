@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="1dp"
     android:background="@drawable/shape_radius_10"
     android:elevation="5dp">
@@ -50,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="13dp"
-                android:text="@string/tv_dis_cu"
+                tools:text="@string/tv_dis_cu"
                 android:textAppearance="@style/TextAppearance.NaverPay.detail_regular_12"
                 android:textColor="@color/main_green2"
                 app:layout_constraintBottom_toBottomOf="parent"
