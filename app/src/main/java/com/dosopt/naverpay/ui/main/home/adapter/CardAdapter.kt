@@ -2,19 +2,24 @@ package com.dosopt.naverpay.ui.main.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.dosopt.naverpay.R
-import com.dosopt.naverpay.databinding.ItemCardDeselectedBinding
-import com.dosopt.naverpay.databinding.ItemCardSelectedBinding
+import com.dosopt.naverpay.databinding.ItemHomeCardDeselectedBinding
+import com.dosopt.naverpay.databinding.ItemHomeCardSelectedBinding
 import com.dosopt.naverpay.domain.model.home.CardInfo
+import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class CardAdapter(
     private val onCardClickListener: (CardInfo) -> Unit,
-) : ListAdapter<CardInfo, RecyclerView.ViewHolder>(CardDiffCallback()) {
+) : ListAdapter<CardInfo, RecyclerView.ViewHolder>(
+    ItemDiffCallback<CardInfo>(
+        onItemsTheSame = { oldItem, newItem -> oldItem.id == newItem.id },
+        onContentsTheSame = { oldItem, newItem -> oldItem == newItem }
+    )
+) {
 
     private var selectedCard: CardInfo? = null
 
@@ -22,12 +27,12 @@ class CardAdapter(
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
             SELECTED_CARD_VIEW_TYPE -> {
-                val binding = ItemCardSelectedBinding.inflate(inflater, parent, false)
+                val binding = ItemHomeCardSelectedBinding.inflate(inflater, parent, false)
                 SelectedCardViewHolder(binding, onCardClickListener)
             }
 
             DESELECTED_CARD_VIEW_TYPE -> {
-                val binding = ItemCardDeselectedBinding.inflate(inflater, parent, false)
+                val binding = ItemHomeCardDeselectedBinding.inflate(inflater, parent, false)
                 DeselectedCardViewHolder(binding, onCardClickListener)
             }
 
@@ -71,14 +76,14 @@ class CardAdapter(
 }
 
 class SelectedCardViewHolder(
-    private val binding: ItemCardSelectedBinding,
+    private val binding: ItemHomeCardSelectedBinding,
     private val onCardClickListener: (CardInfo) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun onBind(cardInfo: CardInfo) {
         binding.ivCardSelected.load(cardInfo.img) {
             crossfade(true)
-            error(R.drawable.img_card_blank)
+            error(R.drawable.rectangle_bg_white_radius_6)
             transformations(RoundedCornersTransformation(radius = 8f))
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
@@ -86,26 +91,16 @@ class SelectedCardViewHolder(
 }
 
 class DeselectedCardViewHolder(
-    private val binding: ItemCardDeselectedBinding,
+    private val binding: ItemHomeCardDeselectedBinding,
     private val onCardClickListener: (CardInfo) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun onBind(cardInfo: CardInfo) {
         binding.ivCardDeselected.load(cardInfo.img) {
             crossfade(true)
-            error(R.drawable.img_card_blank)
+            error(R.drawable.rectangle_bg_white_radius_6)
             transformations(RoundedCornersTransformation(radius = 8f))
         }
         binding.root.setOnClickListener { onCardClickListener(cardInfo) }
-    }
-}
-
-class CardDiffCallback : DiffUtil.ItemCallback<CardInfo>() {
-    override fun areItemsTheSame(oldItem: CardInfo, newItem: CardInfo): Boolean {
-        return oldItem.id == newItem.id
-    }
-
-    override fun areContentsTheSame(oldItem: CardInfo, newItem: CardInfo): Boolean {
-        return oldItem == newItem
     }
 }
