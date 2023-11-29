@@ -54,5 +54,12 @@
     <string name="benefit_user_point_format">%,d</string>
 
     <!-- point -->
+    <string name="tv_point_user_point">%,d원</string>
+    <string name="tv_point_reward_amount">+%,d 원</string>
+    <string name="point_graph_payment">결제수단</string>
+    <string name="point_graph_review">리뷰</string>
+    <string name="point_graph_membership">멤버십</string>
+    <string name="point_graph_base">기본</string>
+    <string name="point_graph_center_text">2023.11.01. \n~ 11.30.</string>
 
 </resources>
