@@ -6,25 +6,13 @@
     android:layout_height="wrap_content"
     android:paddingBottom="20dp">
 
-    <TextView
-        android:id="@+id/tv_benefit_popular_rank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
-        android:textColor="@color/sub_black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="1" />
-
     <ImageView
         android:id="@+id/iv_benefit_popular_logo"
         android:layout_width="54dp"
         android:layout_height="56dp"
-        android:layout_marginStart="11dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_benefit_popular_rank"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@mipmap/ic_logo" />
 
