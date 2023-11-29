@@ -160,27 +160,27 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_place"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginHorizontal="22dp"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="3"
-                    tools:itemCount="6"
-                    tools:listitem="@layout/item_place_nearby"
-                    app:layout_constraintTop_toBottomOf="@id/tv_place_near"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_place"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_place_near"
+                app:spanCount="3"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_place_nearby" />
 
 
             <TextView
                 android:id="@+id/tv_place_recom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="44dp"
                 android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
                 app:layout_constraintStart_toStartOf="@id/tv_place_near"
                 app:layout_constraintTop_toBottomOf="@id/rv_place"
@@ -190,10 +190,10 @@
                 android:id="@+id/btn_place_recom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="77dp"
+                android:layout_marginTop="65dp"
                 android:background="@drawable/rectangle_black_radius_20"
-                app:layout_constraintTop_toBottomOf="@id/rv_place"
-                app:layout_constraintEnd_toEndOf="@id/btn_place_near">
+                app:layout_constraintEnd_toEndOf="@id/btn_place_near"
+                app:layout_constraintTop_toBottomOf="@id/rv_place">
 
                 <TextView
                     android:id="@+id/tv_place_btn_recom"
@@ -210,28 +210,22 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/layout_rv_recommend"
-                android:layout_width="wrap_content"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_place_recommend"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="22dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="55dp"
+                android:layout_marginTop="24dp"
+                android:importantForAccessibility="no"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_place_recom">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_place_recommend"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="2"
-                    tools:itemCount="6"
-                    tools:listitem="@layout/item_place_recommend" />
-            </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@id/tv_place_recom"
+                app:spanCount="3"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_place_recommend" />
 
             <TextView
                 android:id="@+id/tv_place_payment"
@@ -241,7 +235,7 @@
                 android:text="@string/tv_place_payment"
                 android:textAppearance="@style/TextAppearance.NaverPay.subtitle_smbold_17"
                 app:layout_constraintStart_toStartOf="@id/tv_place_near"
-                app:layout_constraintTop_toBottomOf="@id/layout_rv_recommend" />
+                app:layout_constraintTop_toBottomOf="@id/rv_place_recommend" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/btn_place_map_bottom"
@@ -249,8 +243,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="69dp"
                 android:background="@drawable/rectangle_green_radius_20"
-                app:layout_constraintTop_toBottomOf="@id/layout_rv_recommend"
-                app:layout_constraintEnd_toEndOf="@id/btn_place_near">
+                app:layout_constraintEnd_toEndOf="@id/btn_place_near"
+                app:layout_constraintTop_toBottomOf="@id/rv_place_recommend">
 
                 <TextView
                     android:id="@+id/tv_btn_map_bottom"
@@ -267,29 +261,23 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/layout_rv_place_payment"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_place_payment"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="22dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="68dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:importantForAccessibility="no"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_place_payment">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_place_payment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="2"
-                    tools:itemCount="6"
-                    tools:listitem="@layout/item_place_payment" />
-            </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@id/tv_place_payment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:spanCount="3"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_place_payment" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

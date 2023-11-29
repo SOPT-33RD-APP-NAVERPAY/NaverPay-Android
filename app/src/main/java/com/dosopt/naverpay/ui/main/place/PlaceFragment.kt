@@ -122,10 +122,10 @@ class PlaceFragment : Fragment() {
         with(binding) {
             rvPlace.addItemDecoration(VerticalItemDecorator(12))
             rvPlace.addItemDecoration(HorizontalItemDecorator(8))
-            rvPlaceRecommend.addItemDecoration(VerticalItemDecorator(2))
+            rvPlaceRecommend.addItemDecoration(VerticalItemDecorator(0))
             rvPlaceRecommend.addItemDecoration(HorizontalItemDecorator(6))
-            rvPlacePayment.addItemDecoration(VerticalItemDecorator(2))
-            rvPlacePayment.addItemDecoration(HorizontalItemDecorator(8))
+            rvPlacePayment.addItemDecoration(VerticalItemDecorator(12))
+            rvPlacePayment.addItemDecoration(HorizontalItemDecorator(10))
         }
     }
 
