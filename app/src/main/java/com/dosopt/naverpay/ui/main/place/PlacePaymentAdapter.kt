@@ -6,13 +6,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.databinding.ItemPlacePaymentBinding
-import com.dosopt.naverpay.domain.model.place.OnsitepaymentList
+import com.dosopt.naverpay.network.dto.PlaceResponse
 import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class PlacePaymentAdapter :
-    ListAdapter<OnsitepaymentList, PlacePaymentAdapter.PlacePaymentViewHolder>(
+    ListAdapter<PlaceResponse.OnsitepaymentListDto, PlacePaymentAdapter.PlacePaymentViewHolder>(
         diffCallback
     ) {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlacePaymentViewHolder {
         val binding =
@@ -21,19 +22,20 @@ class PlacePaymentAdapter :
     }
 
     override fun onBindViewHolder(holder: PlacePaymentViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+
+        holder.onBind(currentList[position])
     }
 
     class PlacePaymentViewHolder(private val binding: ItemPlacePaymentBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: OnsitepaymentList) {
-            binding.ivDomino.load(data.logo_img_url)
+        fun onBind(data: PlaceResponse.OnsitepaymentListDto) {
+            binding.ivDomino.load(data.logoImgUrl)
             binding.tvDomino.text = data.name
         }
     }
 
     companion object {
-        private val diffCallback = ItemDiffCallback<OnsitepaymentList>(
+        private val diffCallback = ItemDiffCallback<PlaceResponse.OnsitepaymentListDto>(
             onItemsTheSame = { old, new -> old.id == new.id },
             onContentsTheSame = { old, new -> old == new }
         )

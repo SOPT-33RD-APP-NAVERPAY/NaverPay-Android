@@ -37,6 +37,7 @@ data class PlaceResponse(
     data class NearbyplaceListDto(
         @SerialName("distance")
         val distance: Int = 0,
+        val distanceValue: String = "$distance m",
         @SerialName("id")
         val id: Long = 0,
         @SerialName("logo_img_url")

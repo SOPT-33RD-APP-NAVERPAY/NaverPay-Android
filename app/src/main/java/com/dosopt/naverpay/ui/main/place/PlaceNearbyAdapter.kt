@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dosopt.naverpay.databinding.ItemPlaceNearbyBinding
-import com.dosopt.naverpay.domain.model.place.NearbyplaceList
+import com.dosopt.naverpay.network.dto.PlaceResponse
 import com.dosopt.naverpay.util.view.ItemDiffCallback
 
 class PlaceNearbyAdapter :
-    ListAdapter<NearbyplaceList, PlaceNearbyAdapter.PlaceNearbyViewHolder>(
+    ListAdapter<PlaceResponse.NearbyplaceListDto, PlaceNearbyAdapter.PlaceNearbyViewHolder>(
         diffCallback
     ) {
 
@@ -21,20 +21,20 @@ class PlaceNearbyAdapter :
     }
 
     override fun onBindViewHolder(holder: PlaceNearbyViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+        holder.onBind(currentList[position])
     }
 
     class PlaceNearbyViewHolder(private val binding: ItemPlaceNearbyBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: NearbyplaceList) {
-            binding.ivCu.load(data.logo_img_url)
+        fun onBind(data: PlaceResponse.NearbyplaceListDto) {
+            binding.ivCu.load(data.logoImgUrl)
             binding.tvCu.text = data.name
             binding.tvDisCu.text = data.distanceValue
         }
     }
 
     companion object {
-        private val diffCallback = ItemDiffCallback<NearbyplaceList>(
+        private val diffCallback = ItemDiffCallback<PlaceResponse.NearbyplaceListDto>(
             onItemsTheSame = { old, new -> old.id == new.id },
             onContentsTheSame = { old, new -> old == new }
         )
