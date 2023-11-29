@@ -18,6 +18,7 @@ import com.dosopt.naverpay.ui.main.benefit.adapter.ImmediateBrandAdapter
 import com.dosopt.naverpay.ui.main.benefit.adapter.PopularBrandAdapter
 import com.dosopt.naverpay.ui.main.benefit.decorator.CardMenuItemDecoration
 import com.dosopt.naverpay.ui.main.benefit.decorator.DividerItemDecoration
+import com.dosopt.naverpay.ui.main.point.PointFragment
 import com.dosopt.naverpay.util.fragment.toast
 
 class BenefitFragment : Fragment() {
@@ -41,6 +42,7 @@ class BenefitFragment : Fragment() {
         observeViewModelData()
         initializeMenuButtons()
         setupBenefitData()
+        moveToPoint()
     }
 
     private fun setupRecyclerViews() {
@@ -107,7 +109,10 @@ class BenefitFragment : Fragment() {
         benefitViewModel.userInfo.observe(viewLifecycleOwner) { userInfo ->
             binding.tvBenefitUserName.text =
                 getString(R.string.benefit_name, userInfo.user_name)
-            val formattedPoints = String.format(getString(R.string.benefit_user_point_format), userInfo.user_point.toInt())
+            val formattedPoints = String.format(
+                getString(R.string.benefit_user_point_format),
+                userInfo.user_point.toInt()
+            )
             binding.tvBenefitUserPoint.text =
                 getString(R.string.benefit_user_point, formattedPoints)
         }
@@ -157,7 +162,6 @@ class BenefitFragment : Fragment() {
         }
     }
 
-
     private fun initializeMenuButtons() {
         val menuButtons = mapOf(
             binding.ibBenefitPointMenu1 to Pair(
@@ -198,6 +202,15 @@ class BenefitFragment : Fragment() {
     private fun setupBenefitData() {
         benefitViewModel.getBenefitInfo()
         benefitViewModel.getRecommend()
+    }
+
+    private fun moveToPoint() {
+        binding.ivBenefitPointArrow.setOnClickListener {
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fcv_main, PointFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
     }
 
     override fun onDestroyView() {

@@ -161,7 +161,7 @@ class PlaceFragment : Fragment() {
     private fun clickXbtn() {
         binding.ivPlaceBtnX.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(R.id.iv_place_btn_x, HomeFragment())
+            transaction.add(R.id.fcv_main, HomeFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
@@ -170,7 +170,7 @@ class PlaceFragment : Fragment() {
     private fun clickMapbtn() {
         binding.btnPlaceMapBottom.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(R.id.btn_place_map_bottom, BenefitFragment())
+            transaction.add(R.id.fcv_main, BenefitFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }

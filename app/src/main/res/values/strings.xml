@@ -43,7 +43,7 @@
     <string name="tv_place_recom">패션에 관심있는\n%s님을 위한 추천</string>
     <string name="tv_btn_recom"><![CDATA[추천 더보기 >]]></string>
     <string name="tv_place_payment">전국 12만개 가맹점에서\n현장결제 하세요</string>
-    <string name="tv_btn_map_bottom"><![CDATA[지도로 보기 >]]></string>
+    <string name="tv_btn_map_bottom"><![CDATA[전체 보기 >]]></string>
     <string name="tv_cu">CU 편의점</string>
     <string name="tv_dis_cu">%dm</string>
     <string name="tv_domino">도미노 피자</string>

@@ -308,7 +308,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="14dp"
                 android:importantForAccessibility="no"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@drawable/rectangle_bg_white_radius_6"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
                 app:layout_constraintStart_toStartOf="@id/iv_recent_payment"
