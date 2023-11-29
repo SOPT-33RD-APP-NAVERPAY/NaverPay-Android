@@ -37,18 +37,19 @@ interface NaverPayService {
     // 혜택_찜하기 등록
     @Headers("X-Auth-id: 1")
     @POST("/benefit/like/{brandId}")
-    suspend fun sendLike(
-        @Path("brandId") brandId: String,
+    suspend fun postBrandLike(
+        @Path("brandId") brandId: Long,
     ): BaseResponse<LikeResponse>
 
     // 혜택_찜하기 취소
     @Headers("X-Auth-id: 1")
     @DELETE("/benefit/like/{brandId}")
-    suspend fun deleteLike(
-        @Path("brandId") brandId: String,
+    suspend fun deleteBrandLike(
+        @Path("brandId") brandId: Long,
     ): BaseResponse<LikeResponse>
 
     // 혜택_포인트 추천 내역 조회
+    @Headers("X-Auth-id: 1")
     @GET("/benefit/recommend")
     suspend fun getRecommend(): BaseResponse<BenefitResponse>
 
