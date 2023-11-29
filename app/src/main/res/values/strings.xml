@@ -49,5 +49,7 @@
     <string name="tv_domino">도미노 피자</string>
 
     <!-- point -->
+    <string name="tv_point_user_point">%,d원</string>
+    <string name="tv_point_reward_amount">+%,d 원</string>
 
 </resources>

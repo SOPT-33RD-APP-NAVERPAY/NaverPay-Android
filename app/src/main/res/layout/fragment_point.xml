@@ -321,6 +321,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_point_delete">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_point_reward"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
