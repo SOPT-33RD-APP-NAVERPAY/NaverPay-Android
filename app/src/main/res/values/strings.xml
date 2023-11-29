@@ -47,6 +47,11 @@
     <string name="tv_cu">CU 편의점</string>
     <string name="tv_dis_cu">%dm</string>
     <string name="tv_domino">도미노 피자</string>
+    <string name="benefit_like_post_success">좋아요가 등록되었습니다.</string>
+    <string name="benefit_like_post_fail">좋아요 등록에 실패했습니다.</string>
+    <string name="benefit_like_delete_success">좋아요가 취소되었습니다.</string>
+    <string name="benefit_like_delete_fail">좋아요 취소에 실패했습니다.</string>
+    <string name="benefit_user_point_format">%,d</string>
 
     <!-- point -->
 

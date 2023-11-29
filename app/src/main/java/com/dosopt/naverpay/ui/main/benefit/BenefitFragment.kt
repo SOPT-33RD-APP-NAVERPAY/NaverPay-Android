@@ -40,10 +40,12 @@ class BenefitFragment : Fragment() {
         setupViewPager()
         observeViewModelData()
         initializeMenuButtons()
+        setupBenefitData()
     }
 
     private fun setupRecyclerViews() {
-        setupRecyclerView(binding.rvBenefitPointMenu,
+        setupRecyclerView(
+            binding.rvBenefitPointMenu,
             LinearLayoutManager.HORIZONTAL,
             CardMenuAdapter(),
             CardMenuItemDecoration(requireContext())
@@ -76,42 +78,106 @@ class BenefitFragment : Fragment() {
         }
     }
 
+    private fun onLikeButtonClicked(benefitBrand: BenefitBrand) {
+        benefitViewModel.toggleBrandLike(benefitBrand.id)
+
+        if (benefitBrand.is_brand_like) {
+            benefitViewModel.deleteBrandLike(benefitBrand.id)
+        } else {
+            benefitViewModel.postBrandLike(benefitBrand.id)
+        }
+    }
+
     private fun setupViewPager() {
         val admobAdapter = AdmobAdapter()
         binding.vpBenefitAdmob.adapter = admobAdapter
     }
 
     private fun observeViewModelData() {
-        benefitViewModel.cardImages.observe(viewLifecycleOwner) { urls ->
-            (binding.rvBenefitPointMenu.adapter as CardMenuAdapter).submitList(urls)
-        }
+        observeUserInfo()
+        observeCardImages()
+        observePopularBrands()
+        observeImmediateBrands()
+        observeAdmobImages()
+        observePostLikeSuccess()
+        observeDeleteLikeSuccess()
+    }
 
-        benefitViewModel.mockPopularBrands.observe(viewLifecycleOwner) { brands ->
-            (binding.rvBenefitPopularBrand.adapter as PopularBrandAdapter).submitList(brands)
-        }
-
-        benefitViewModel.mockImmediateBrands.observe(viewLifecycleOwner) { brands ->
-            (binding.rvBenefitImmediateBrand.adapter as ImmediateBrandAdapter).submitList(brands)
-        }
-
-        benefitViewModel.admobImages.observe(viewLifecycleOwner) { images ->
-            (binding.vpBenefitAdmob.adapter as AdmobAdapter).submitList(images)
-        }
-
-        benefitViewModel.mockUserInfo.observe(viewLifecycleOwner) { userInfo ->
-            binding.tvBenefitUserName.text = getString(R.string.benefit_name, userInfo.user_name)
-            val formattedPoints = String.format("%,d", userInfo.user_point.toInt())
-            binding.tvBenefitUserPoint.text = getString(R.string.benefit_user_point, formattedPoints)
+    private fun observeUserInfo() {
+        benefitViewModel.userInfo.observe(viewLifecycleOwner) { userInfo ->
+            binding.tvBenefitUserName.text =
+                getString(R.string.benefit_name, userInfo.user_name)
+            val formattedPoints = String.format(getString(R.string.benefit_user_point_format), userInfo.user_point.toInt())
+            binding.tvBenefitUserPoint.text =
+                getString(R.string.benefit_user_point, formattedPoints)
         }
     }
 
+    private fun observeCardImages() {
+        benefitViewModel.cardImages.observe(viewLifecycleOwner) { urls ->
+            (binding.rvBenefitPointMenu.adapter as CardMenuAdapter).submitList(urls)
+        }
+    }
+
+    private fun observePopularBrands() {
+        benefitViewModel.popularBrands.observe(viewLifecycleOwner) { brands ->
+            (binding.rvBenefitPopularBrand.adapter as PopularBrandAdapter).submitList(brands)
+        }
+    }
+
+    private fun observeImmediateBrands() {
+        benefitViewModel.immediateBrands.observe(viewLifecycleOwner) { brands ->
+            (binding.rvBenefitImmediateBrand.adapter as ImmediateBrandAdapter).submitList(brands)
+        }
+    }
+
+    private fun observeAdmobImages() {
+        benefitViewModel.admobImages.observe(viewLifecycleOwner) { images ->
+            (binding.vpBenefitAdmob.adapter as AdmobAdapter).submitList(images)
+        }
+    }
+
+    private fun observePostLikeSuccess() {
+        benefitViewModel.postLikeSuccess.observe(viewLifecycleOwner) { success ->
+            if (success) {
+                toast(getString(R.string.benefit_like_post_success))
+            } else {
+                toast(getString(R.string.benefit_like_post_fail))
+            }
+        }
+    }
+
+    private fun observeDeleteLikeSuccess() {
+        benefitViewModel.deleteLikeSuccess.observe(viewLifecycleOwner) { success ->
+            if (success) {
+                toast(getString(R.string.benefit_like_delete_success))
+            } else {
+                toast(getString(R.string.benefit_like_delete_fail))
+            }
+        }
+    }
+
+
     private fun initializeMenuButtons() {
         val menuButtons = mapOf(
-            binding.ibBenefitPointMenu1 to Pair(R.drawable.ic_point_menu_1_on, R.drawable.ic_point_menu_1_off),
-            binding.ibBenefitPointMenu2 to Pair(R.drawable.ic_point_menu_2_on, R.drawable.ic_point_menu_2_off),
-            binding.ibBenefitPointMenu3 to Pair(R.drawable.ic_point_menu_3_on, R.drawable.ic_point_menu_3_off),
-            binding.ibBenefitPointMenu4 to Pair(R.drawable.ic_point_menu_4_on, R.drawable.ic_point_menu_4_off),
-            binding.ibBenefitPointMenu5 to Pair(R.drawable.ic_point_menu_5_on, R.drawable.ic_point_menu_5_off
+            binding.ibBenefitPointMenu1 to Pair(
+                R.drawable.ic_point_menu_1_on,
+                R.drawable.ic_point_menu_1_off
+            ),
+            binding.ibBenefitPointMenu2 to Pair(
+                R.drawable.ic_point_menu_2_on,
+                R.drawable.ic_point_menu_2_off
+            ),
+            binding.ibBenefitPointMenu3 to Pair(
+                R.drawable.ic_point_menu_3_on,
+                R.drawable.ic_point_menu_3_off
+            ),
+            binding.ibBenefitPointMenu4 to Pair(
+                R.drawable.ic_point_menu_4_on,
+                R.drawable.ic_point_menu_4_off
+            ),
+            binding.ibBenefitPointMenu5 to Pair(
+                R.drawable.ic_point_menu_5_on, R.drawable.ic_point_menu_5_off
             ),
         )
         menuButtons.forEach { (button, states) ->
@@ -129,8 +195,9 @@ class BenefitFragment : Fragment() {
         }
     }
 
-    private fun onLikeButtonClicked(benefitBrand: BenefitBrand) {
-        toast("${benefitBrand.id}번이 클릭됨")
+    private fun setupBenefitData() {
+        benefitViewModel.getBenefitInfo()
+        benefitViewModel.getRecommend()
     }
 
     override fun onDestroyView() {

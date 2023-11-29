@@ -165,12 +165,59 @@
                 app:layout_constraintStart_toStartOf="@id/cl_benefit_point"
                 app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_description">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_benefit_popular_brand"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:itemCount="3"
-                    tools:listitem="@layout/item_benefit_popular_brand" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_benefit_popular_brand_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="21dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
+                        android:textColor="@color/main_green"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_benefit_popular_brand_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="56dp"
+                        android:text="2"
+                        android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
+                        android:textColor="@color/sub_black"
+                        app:layout_constraintStart_toStartOf="@id/tv_benefit_popular_brand_first"
+                        app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_brand_first" />
+
+                    <TextView
+                        android:id="@+id/tv_benefit_popular_brand_third"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="56dp"
+                        android:text="3"
+                        android:textAppearance="@style/TextAppearance.NaverPay.head_bold_18"
+                        android:textColor="@color/sub_black"
+                        app:layout_constraintStart_toStartOf="@id/tv_benefit_popular_brand_first"
+                        app:layout_constraintTop_toBottomOf="@id/tv_benefit_popular_brand_second" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_benefit_popular_brand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_benefit_popular_brand_first"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_benefit_popular_brand" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
