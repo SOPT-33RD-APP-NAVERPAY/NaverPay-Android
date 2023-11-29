@@ -185,7 +185,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="51dp"
                     android:maxLines="1"
-                    android:text="@string/tv_card_balance"
                     android:textAppearance="@style/TextAppearance.NaverPay.number_bold_26"
                     android:textColor="@color/bg_white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_card_balacne_title"
@@ -235,8 +234,6 @@
                 android:background="@drawable/gradient_linear_gd"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="8dp"
                 app:layout_constraintStart_toStartOf="@id/cl_card_background"
                 app:layout_constraintTop_toTopOf="@id/cl_card_background" />
 
@@ -257,7 +254,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
-                android:text="@string/tv_recent_date"
                 android:textAppearance="@style/TextAppearance.NaverPay.body_smbold_15"
                 android:textColor="@color/main_lightgreen"
                 app:layout_constraintBottom_toBottomOf="@id/tv_recent_payment"
@@ -312,8 +308,8 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="14dp"
                 android:importantForAccessibility="no"
-                android:scaleType="centerInside"
-                android:src="@drawable/img_recent_blank"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rectangle_bg_white_radius_6"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
                 app:layout_constraintStart_toStartOf="@id/iv_recent_payment"
                 app:layout_constraintTop_toTopOf="@id/iv_recent_payment" />
@@ -324,7 +320,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:maxLines="1"
-                android:text="@string/tv_recent_place"
                 android:textAppearance="@style/TextAppearance.NaverPay.body_medium_15"
                 android:textColor="@color/bg_black"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
@@ -333,11 +328,10 @@
 
             <TextView
                 android:id="@+id/tv_recent_price"
-                android:layout_width="99dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="17dp"
                 android:maxLines="1"
-                android:text="@string/tv_recent_price"
                 android:textAppearance="@style/TextAppearance.NaverPay.head_semibold_19"
                 android:textColor="@color/bg_black"
                 app:layout_constraintBottom_toBottomOf="@id/iv_recent_payment"
@@ -442,7 +436,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/tv_event"
+                android:id="@+id/tv_event_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
@@ -498,7 +492,7 @@
                 android:paddingEnd="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_event" />
+                app:layout_constraintTop_toBottomOf="@id/tv_event_title" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
