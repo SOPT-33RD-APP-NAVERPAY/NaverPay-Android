@@ -1,5 +1,10 @@
 # NaverPay-Android
 
+## 시연영상
+
+https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/da32e7b8-ab6b-48b6-b1b3-d51bfd9c2078
+
+## Contributor
 <table>
   <tbody>
     <tr>
