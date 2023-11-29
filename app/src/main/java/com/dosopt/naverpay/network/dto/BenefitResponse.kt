@@ -1,6 +1,8 @@
 package com.dosopt.naverpay.network.dto
 
 
+import com.dosopt.naverpay.domain.model.benefit.BenefitBrand
+import com.dosopt.naverpay.domain.model.benefit.BenefitUser
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -28,4 +30,20 @@ data class BenefitResponse(
         @SerialName("name")
         val name: String = ""
     )
+
+    fun toBenefitUser() = BenefitUser(
+        user_name = userName,
+        user_point = userPoint.toLong()
+    )
+
+    fun toBenefitBrandList() = brandList.map {
+        BenefitBrand(
+            id = it.id,
+            name = it.name,
+            logo_img_url = it.logoImgUrl,
+            discount_content = it.discountContent,
+            discount_type = it.discountType,
+            is_brand_like = it.isBrandLike
+        )
+    }
 }

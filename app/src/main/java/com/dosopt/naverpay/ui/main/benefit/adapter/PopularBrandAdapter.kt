@@ -1,5 +1,6 @@
 package com.dosopt.naverpay.ui.main.benefit.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -44,16 +45,10 @@ class PopularBrandAdapter(
 
         private fun setBrandData(benefitBrand: BenefitBrand) {
             with(binding) {
-                tvBenefitPopularRank.text = benefitBrand.id.toString()
                 ivBenefitPopularLogo.load(benefitBrand.logo_img_url)
                 tvBenefitPopularName.text = benefitBrand.name
                 tvBenefitPopularContent.text = benefitBrand.discount_content
                 tvBenefitPopularType.text = benefitBrand.discount_type
-            }
-            if (benefitBrand.id == 1L) {
-                binding.tvBenefitPopularRank.setTextColor(
-                    binding.root.context.getColor(R.color.main_green)
-                )
             }
         }
 
