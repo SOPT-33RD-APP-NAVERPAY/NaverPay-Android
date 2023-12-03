@@ -32,7 +32,7 @@ https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/da32e
     <tr>
       <td align="center">담당 뷰: Benefit, Point</td>
       <td align="center">담당 뷰: Place</td>
-      <td align="center">담당 뷰: Home, Point</td>
+      <td align="center">담당 뷰: Home, Point api</td>
     </tr>
   </tbody>
 </table>
